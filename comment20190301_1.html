@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>佑远评论 -- 90后</title>
+    <!--Leancloud 操作库:-->
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!--Valine 的核心代码库:-->
+    <script src="https://cdn.bootcss.com/valine/1.3.4/Valine.min.js"></script>
+</head>
+
+<body>
+    <!-- <h1 style="color: red">有奖评论！！！</h1>
+    <p>请在<strong>邮箱</strong>处填写正确的<strong>联系号码</strong>，以便客服小姐姐联系<strong>中奖用户</strong>。</p> -->
+    <br>
+    <div style="width: 100%;">
+        <a href="http://yy.rxmmd.net/Vshop/activitylist2?pid=1"><img
+                src="http://yy.rxmmd.net/Storage/master/gallery/201903/201903011052507422940.jpg" width="100%"></a>
+    </div>
+    <br />
+    <div class="comment"></div>
+    <script>
+        new Valine({
+            // AV 对象来自上面引入av-min.js(老司机们不要开车➳♡゛扎心了老铁)
+            av: AV,
+            el: '.comment', // 
+            app_id: 'wOzkyVfgYFez0NWJru3mANs8-gzGzoHsz', // 这里填写上面得到的APP ID
+            app_key: 'GVAryU9Oqg51N1YVS92IJNVl', // 这里填写上面得到的APP KEY
+            placeholder: 'YOYO邀请您说点什么吧·····' // [v1.0.7 new]留言框占位提示文字
+        });
+    </script>
+</body>
+
+</html>

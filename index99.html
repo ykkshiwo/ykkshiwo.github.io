@@ -1,0 +1,877 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!--	禁止放大-->
+	<meta name="viewport" content=" maximum-scale=1.0, user-scalable=0">
+	<title>课程表</title>
+	<!--	<link rel="stylesheet" href="./introduceOfTrains.css" />-->
+	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+	<!--	handlebars模板语言-->
+	<script src="./handlebars-v4.0.12.js"></script>
+	<!--	课程信息js文件导入-->
+	<script src="./courses_info99.js"></script>
+	<script>
+
+		//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
+		var course_interval = [540, 600, 720, 840, 960, 1140, 1160, 1210, 1220]
+		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
+		function whereCourse() {
+			var d = new Date();
+			var the_time_of_min = d.getHours() * 60 + d.getMinutes();
+			for (var i = 0; i < course_interval.length; i++) {
+				if (the_time_of_min < course_interval[i]) {
+					return i;
+					break;
+				}
+			}
+		}
+
+		//		此函数输入一堂课的日期，输出这堂课在第几行。
+		function whereIsCourse(t) {
+			for (var i = 0; i < course_interval.length; i++) {
+				if (course_interval[i] == t) {
+					return i;
+					break;
+				}
+			}
+		}
+
+		//		此函数是将所有的课程添加到表的内容中。
+		function addCourses(fjl) {
+			//			循环第一层数据（7天的所有课程），每一个是其中一天的所有课程。
+			for (var i = 0; i < fjl.length; i++) {
+				//				循环第二层数据（其中一天的所有课程），每一次循环得到的是其中的一节课。
+				for (var j = 0; j < fjl[i].length; j++) {
+					var this_course = fjl[i][j] //这堂课的所有数据
+					var this_course_time = this_course['Time'] //这堂课的时长
+					var where_time_course = whereIsCourse(this_course_time)
+					console.log("这是 " + i + " 天" + " ，第" + j + "堂课" + where_time_course) //课程在第j+1行，第i+1列。
+					var jq_append_one_course = 'table tr:eq(' + parseInt(where_time_course + 1) + ') td:eq(' + parseInt(i + 1) + ')'
+					console.log(jq_append_one_course)
+					var one_course = "<div class='one_couser'><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458465939380.png' class='tag'><span style='width:100%'>" + this_course['cousrName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458540320170.png' class='tag'><span>" + this_course['TrainName'] + "</span></div><div class='course_train_time'><img src='http://yy.rxmmd.net/Storage/master/gallery/201811/201811141458340257340.png' class='tag'><span>" + this_course['duration'] + "</span></div></div>"
+					$(jq_append_one_course).children("div").append(one_course)
+				}
+			}
+		}
+
+		/**
+		 * 钟钟说：“把每一天的课程放在第一个位置上。”于是，我需要更改每一次读取的课程数组，
+		 * 具体变现为改变数组的顺序，将今天的课程放在第一位（0），以此类推即可。
+		 *上面的addCourses()函数只是把给他的一个数组按要求插进去，只需要给他的参数变化一下顺序即可。
+		 * **/
+		function changeQueueOfFjl(fjl) {
+			var d = new Date()
+			var w = d.getDay()
+			var new_fjl = fjl.slice(w, 7).concat(fjl.slice(0, w))
+			return new_fjl
+		}
+
+
+
+
+		var weekz = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+		var weekz_en = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		var month_en = ["January", "February", "March", "April", "May", "June", "July ", "August", "Septemper", "October", "November", "December"];
+		//		此函数用来计算从就今天计算n天后的具体月日和星期，输入参数为几天，如今天为0，明天为1 ···
+		function getDay_Date(i) {
+			var d = new Date();
+			d.setDate(d.getDate() + i)
+			var week = d.getDay();
+			var mon = d.getMonth();
+			var day = d.getDate();
+			return mon + 1 + "月" + day + "日 " + weekz[week]
+		}
+
+		//		此函数用以返回我想要的星期格式，主要就是把星期天返回的时候变成"7"，而不是"0"。
+		function getDayNormal() {
+			var d = new Date();
+			var whatday = d.getDay();
+			if (whatday == 0) {
+				return 7;
+			}
+			else {
+				return whatday;
+			}
+		}
+
+
+		//显示右上角时钟的函数
+		function showTime() {
+			var date = new Date();
+			var timeStr;
+			var hour = date.getHours();
+			//			在出现个位数时，要添加0，例如，09点，而不是9点。
+			timeStr = hour < 10 ? '0' : '';
+			timeStr += hour + ':';
+			var minute = date.getMinutes();
+			timeStr += minute < 10 ? '0' : '';
+			timeStr += minute + ':'
+			var second = date.getSeconds();
+			timeStr += second < 10 ? '0' : '';
+			timeStr += second;
+			return timeStr;
+		}
+
+		/*************************************以下为jQuery************************************/
+
+		$(document).ready(function () {
+
+
+			/***********************************以下天气预报****************************************/
+
+			var key = "d5688c33007b420ba76343a93d03b42a"; //我的key
+			var location = "义乌"; // 查询义乌
+			var many_of_the_weather;
+			var icon_head = "https://cdn.heweather.com/cond_icon/"
+			var d = new Date();
+			$.get('https://free-api.heweather.com/s6/weather/forecast?key=' + key + '&location=' + location, function (data, status) {
+				console.log("从和风天气获得" + location + "的数据为： " + data);
+				var many_of_the_weather = data["HeWeather6"][0]['daily_forecast'];
+				var today = many_of_the_weather[0];
+				console.log(many_of_the_weather.length);
+				for (var i = 0; i < many_of_the_weather.length; i++) {
+					var this_day_information = many_of_the_weather[i];
+					console.log("this_day_information: ", this_day_information);
+					var this_day_date = this_day_information["date"];
+					var date_print_array = this_day_date.split("-");
+					console.log(date_print_array);
+					var date_print = date_print_array[1] + "/" + date_print_array[2] + "<div>" + this_day_information["cond_txt_d"] + "</div>";
+					var icon_imgurl = icon_head + this_day_information["cond_code_d"] + ".png"
+					console.log("icon_imgurl: " + icon_imgurl)
+					$("#day" + i + " img").attr("src", icon_imgurl);
+					$("#day" + i + " text").html(date_print);
+				}
+
+				console.log(today["tmp_max"]);
+				$("#tmp_today").html(today["tmp_min"] + "~" + today["tmp_max"]);
+			});
+
+			//			将具体日期写在温度上面
+			var date_on_temp = weekz_en[d.getDay()] + "," + d.getDate() + "<sup>th</sup>" + " of " + month_en[d.getMonth()] + " " + d.getFullYear()
+			console.log(date_on_temp)
+			$("#specific_date").html(date_on_temp);
+
+			/***********************************以上天气预报****************************************/
+
+
+			/**************************以下timer*****************************/
+
+			function shownowtime() {
+				$("#timer").text(showTime());
+			}
+
+			window.setInterval(shownowtime, 200);
+
+			/**************************以上timer*****************************/
+
+
+
+			//首先需要知道今天是星期几，也就是whatday。
+			var whatday = getDayNormal();
+			//			在知道今天是星期几后，计算出这一周每一天的具体日期。
+			//			例如，今天是周五，那么这一周的周一就是4天前，
+			//			可以使用getDay_Date(1-5)函数来计算那一天的具体日期，
+			//			以次类推，可以得到这一周每天的具体日期，
+			//			而且因为星期几在表格上的位置是固定的，都是从周一到周天。
+			// $("#1").text(getDay_Date(1 - whatday))
+			// $("#2").text(getDay_Date(2 - whatday))
+			// $("#3").text(getDay_Date(3 - whatday))
+			// $("#4").text(getDay_Date(4 - whatday))
+			// $("#5").text(getDay_Date(5 - whatday))
+			// $("#6").text(getDay_Date(6 - whatday))
+			// $("#7").text(getDay_Date(7 - whatday))
+			$("#1").text(getDay_Date(0))
+			$("#2").text(getDay_Date(1))
+			$("#3").text(getDay_Date(2))
+			$("#4").text(getDay_Date(3))
+			$("#5").text(getDay_Date(4))
+			$("#6").text(getDay_Date(5))
+			$("#7").text(getDay_Date(6))
+
+			//			将今天和明天的标记为中文“今天”和“明天”
+			$("#1").text("今天");
+			$("#1").parent().css({ "background-color": "rgb(255,189,0)" });
+			$("#2").text("明天");
+			$("#2").parent().css({ "background-color": "rgb(139,103,0)" });
+
+			// 此为将目前在进行的课程下边框变成3px的红线。
+			function setRedline() {
+				var now_course = whereCourse();
+				var jquery_find_now_course = "tr:eq(" + now_course + ")"
+				console.log("这是每隔5分钟更新的数据:", jquery_find_now_course)
+				$("tr:not(:first)").css({ "border-bottom": "1px solid white" });
+				$(jquery_find_now_course).css({ "border-bottom": "3px solid red" })
+			}
+			window.setInterval(setRedline, 1000 * 60 * 5);
+
+			var now_course_ = whereCourse();
+			var jquery_find_now_course_ = "tr:eq(" + now_course_ + ")"
+			$(jquery_find_now_course_).css({ "border-bottom": "3px solid red" })
+			console.log("这是立刻更新的数据:", jquery_find_now_course_)
+
+			//将所有课程插入到表格中。
+			new_fjl = changeQueueOfFjl(fjl)
+			addCourses(new_fjl)
+
+			//			$('table tr:eq(1) td:eq(1)').children("div").append(xtt); //在单元格元素里面插入一堂课，如此时插入一堂课到第一行，第一列。
+
+			//$('table tr:eq(3) td:eq(3)').children("div").append(one_course);//又插入一堂
+			//$('table tr:eq(3) td:eq(3)').children("div").append(one_course);
+			//			$('table td').append(xtt); 
+			//			$('table tr:eq(5) td').eq(5).html(xt);
+			//console.log(r)
+			//			$('tr td:nth-child(1)').css("background-color", "rgb(100,100,100)")// 所有tr元素的td元素中的第2个
+
+			/**************************以下选择课程表或私教，团操*****************************/
+			//			课程表不能隐藏
+			//			$("#courses").hide();
+			$("#personal_trains").hide();
+			$("#group_trains").hide();
+
+			$("#choose_course").click(function () {
+				$("#courses").show();
+				$("#personal_trains").hide();
+				$("#group_trains").hide();
+			});
+
+			$("#choose_group_trains").click(function () {
+				$("#courses").hide();
+				$("#personal_trains").hide();
+				$("#group_trains").show();
+			});
+
+			$("#choose_personal_trains").click(function () {
+				$("#courses").hide();
+				$("#personal_trains").show();
+				$("#group_trains").hide();
+			});
+
+			/**************************以上选择课程表或私教，团操*****************************/
+
+		});
+
+		/*************************************以上为jQuery************************************/
+
+	</script>
+	<style>
+		html,body{
+			margin: 0;
+			height: 100%;
+			width: 100%;
+		}
+		.if_much_cousers{
+			display: flex;
+			flex-direction: column; 
+			justify-content:space-between;
+			align-items: flex-start;
+/*			border: 1px solid yellow;*/
+		}
+		.one_couser{
+/*			height: 65px; */
+/*			border: 1px red solid;*/
+			display: flex; 
+			flex-direction: column; 
+			justify-content: center;
+			align-items: flex-start;
+			font-size: 12px;
+			width: 90%;
+			margin-left: 5px;
+			padding-bottom: 5px;
+		}
+		.course_train_time{
+			display: flex; 
+			flex-direction: row; 
+			justify-content: center; 
+			align-items: center; 
+			margin-top: 6px;
+		}
+		.tag{
+			margin-right: 2px;
+			width: 12px;
+		}
+/*		选择所有id属性以d打头的span元素*/
+		span[id^="d"]{
+			color: rgb(150,150,150);
+		}
+		tr td:nth-child(1){
+			background-color: rgb(100,100,100);
+			color: white;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		table{
+			border-collapse:collapse;
+			border: 1px solid white;
+			}
+		tr{
+			background-color:rgba(0, 0, 0, 0.38);
+			/* background-color: #28DD0C; */
+		}
+		.weather_day{
+			width:100px;
+/*			border:1px solid green;*/
+			text-align: center;
+		}
+		p{
+			border:0px red solid;
+		}
+		#choose_course{
+			width: 42%; 
+			border: 1px solid red; 
+			text-align: center; 
+			letter-spacing: 30px; 
+			font-size: 28px; 
+			padding: 10px; 
+			border-radius:50px;
+			margin: 10px; 
+			background-color: darkgoldenrod;
+			box-shadow:5px 5px 5px black;
+		}
+		#choose_course:active{
+			box-shadow:3px 3px 5px black;
+			transform: translate(4px,4px);
+		}
+		#choose_group_trains{
+			float: left; 
+			width:60px; 
+			border: 1px red solid;
+			text-align: center; 
+			padding: 10px; 
+			width: 30%; 
+			font-size: 28px;
+			margin: 10px; 
+			border-radius: 50px;
+			background-color: darkgoldenrod;
+			box-shadow:5px 5px 5px black;
+		}
+		#choose_group_trains:active{
+			box-shadow:3px 3px 5px black;
+			transform: translate(4px,4px);
+		}
+		#choose_personal_trains{
+			float: left; 
+			width: 25%; 
+			border: 1px solid red; 
+			padding: 10px;
+			text-align: center; 
+			font-size: 28px;
+			margin: 10px; 
+			border-radius: 50px;
+			background-color: darkgoldenrod;
+			box-shadow:5px 5px 5px black;
+		}
+		#choose_personal_trains:active{
+			box-shadow:3px 3px 5px black;
+			transform: translate(4px,4px);
+		}
+/*		下面是教练的css妈的*/
+		.train_pic_text{
+/*			border: 1px solid yellow;*/
+			color: black;
+			width: 48%;
+			height: 400px;
+			border: 0px red solid;
+			margin: 6px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: flex-start;
+		}
+		.train_pic_text_left{
+			border: 2px solid rgb(181,181,181);
+			width: 45%;
+			height: 70%;
+		}
+		.train_pic_text_right{
+			border: 0px solid blue;
+			width: 45%;
+			height: 90%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+		}
+		.train_pic_text_left img{
+			width: 100%;
+		}
+		.train_pic_text_left p{
+			color: white;
+			font-size: 80px;
+			margin-top: 10px;
+			margin-left: 10px;
+			font-family: SimHei;
+		}
+		.train_name_position{
+			color: white;
+			font-size: 50px;
+			font-family: SimHei;
+			margin-top: 20px;
+		}
+		.train_name_position a{
+			font-size: 20px;
+			margin-left: 10px;
+			color: white;
+		}
+		.teach_class{
+			margin-top: 20px;
+			font-size: 30px;
+			color: rgb(181,181,181);
+			font-family: SimHei;
+		}
+		.teach_class_concrete{
+			margin-top: 20px;
+			border: 0px solid blue;
+			width: 100%;
+/*			height: 40%;*/
+			display: flex; 
+			flex-direction: row; 
+			flex-wrap: wrap; 
+			justify-content: flex-start; 
+			align-items: flex-start;
+		}
+		.hook_classname{
+			margin: 5px;
+			border: 0px solid red;
+			width: 45%;
+			height: 15%;
+			color: rgb(181,181,181);
+			font-size: 32px;
+			font-family: SimHei;
+		}
+		.certificates{
+			margin-top: 20px;
+			color: rgb(181,181,181);
+			font-size: 30px;
+			height: 40%;
+			width: 100%;
+			font-family: SimHei;
+		}
+	</style>
+</head>
+
+<body>
+	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201901/201901310911217010420.jpg); background-repeat: no-repeat; background-size:100% 100%">
+
+		<!--		显示天气预报-->
+		<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
+			<div id="specific_date" style="border: 0px red solid; font-size: 20px;">
+
+			</div>
+			<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
+				<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">12/18</div>
+				<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
+				<div style="align-self: flex-end; border: 0px solid green; font-size: 25px;">c</div>
+			</div>
+			<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%;">
+				<div id="day0" class="weather_day">
+					<!--					这里将今天的天气限定大小为100px，利用溢出隐藏和滤镜投影向右100px，图像向左偏移100px，这样显示出来就是投影的图像颜色-->
+					<div style="width: 100px; position: relative;overflow: hidden">
+						<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid rgba(1,1,1,0);position: relative; left: -100px;-webkit-filter: drop-shadow(100px 0px white)" />
+					</div>
+					<text style="color: white; font-size: 26px">11/11</text>
+				</div>
+				<div id="day1" class="weather_day">
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 0px solid yellow;" /></div>
+					<text style="color: white; font-size: 26px">11/11</text>
+				</div>
+				<div id="day2" class="weather_day">
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100%; border: 0px solid yellow;" /></div>
+					<text style="color: white; font-size: 26px">11/11</text>
+				</div>
+			</div>
+		</div>
+
+		<!--		时钟显示， 绝对定位在右上角-->
+
+		<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
+			12:12 </div>
+
+		<!--		课程表修订， 绝对定位在右上角-->
+				<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
+
+		<!--		将课程表格限定在此div中，默认课程显示-->
+		<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
+			<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
+				<tr style="height: 50px;border-bottom: 1px red solid">
+					<!--					第一行第一个单元格的宽度决定第一列的宽度-->
+					<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
+					<th><span id="1"></span></th>
+					<th><span id="2"></span></th>
+					<th><span id="3"></span></th>
+					<th><span id="4"></span></th>
+					<th><span id="5"></span></th>
+					<th><span id="6"></span></th>
+					<th><span id="7"></span></th>
+				</tr>
+				<tr>
+					<td>
+						09:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						10:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						12:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						14:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						16:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						19:00
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						19:20
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						20:10
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						20:20
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+					<td>
+						<div class="if_much_cousers">
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--		将私教介绍限定在此div中，默认课程不显示-->
+		<div id="personal_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background:rgba(0, 0, 0, 0.38)">
+		</div>
+
+		<!--		将团操限定在此div中，默认课程不显示-->
+		<div id="group_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background-color: rgba(0, 0, 0, 0.38)">
+		</div>
+
+		<div style="width: 60%; height: 10%; border: 0px solid #28DD0C; font-family: SimHei; color:white;">
+			<div id="choose_course">课程表</div>
+			<div id="choose_group_trains">团操课教练</div>
+			<div id="choose_personal_trains"> 私教课教练</div>
+		</div>
+	</div>
+	<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time"></a></div>
+</body>
+<script type="text/template" id="Train_moudel">
+		{{#each trains_info}}
+			<div class="train_pic_text">
+			<div class="train_pic_text_left">
+				<img src={{img}}>
+				<p style="font-size: 30px;">{{en_name}}</p>
+			</div>
+			<div class="train_pic_text_right" style="font-size: 10px;">
+				<div class="train_name_position" style="font-size: 30px">
+					{{cn_name}}<a style="font-size: 15px;">{{position}}</a>
+				</div>
+				<div class="certificates" style="font-size: 15px;">
+					<u>所获认证</u>
+					<ul>
+						{{#each certificates}}
+						<li>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+				<div class="teach_class" style="font-size: 20px;">所教授项目：</div>
+				<div class="teach_class_concrete" style="font-size: 15px;">
+					{{#each projects}}
+					<div class="hook_classname" style="font-size: 15px;">
+						√ {{this}}
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		{{/each}}
+	</script>
+<script src="./trains_info99.js"></script>
+<script>
+	var tpl = $("#Train_moudel").html();
+	var template = Handlebars.compile(tpl);
+	var html = template(data_group_trains);
+	$('#group_trains').html(html);
+
+	var tpl = $("#Train_moudel").html();
+	var template = Handlebars.compile(tpl);
+	var html = template(data_person_trains);
+	$('#personal_trains').html(html);
+</script>
+<script>
+	window.onload = function () {
+		var t = new Date();
+		$("#update_time").append("<a>" + t + "</a>")
+		setTimeout(function () { location.reload() }, 2 * 60 * 60 * 1000) //2个小时刷新一次
+	}
+</script>
+
+</html>
