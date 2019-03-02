@@ -24,7 +24,7 @@ var fjl = [
 
 	[
 		{ 'cousrName': 'Yoga physical 理疗瑜伽', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
-		{ 'cousrName': 'Lumbar abdomen 腰腹', 'TrainName': 'Marco', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'Lumbar abdomen 腰腹塑形', 'TrainName': 'Marco', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': "Zumba 尊巴", 'TrainName': 'Amin', 'Time': '1220', 'duration': '50' },
 		{ 'cousrName': 'Hatha yoga 哈他瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'CYCLE单车', 'TrainName': 'Marco', 'Time': '1210', 'duration': '50' },
@@ -40,12 +40,12 @@ var fjl = [
 		{ 'cousrName': 'Bodypump 杠铃', 'TrainName': 'Marco', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'Jazz爵士舞', 'TrainName': 'David', 'Time': '1220', 'duration': '50' },
 		{ 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'CYCLE单车', 'TrainName': 'Marco', 'Time': '1210', 'duration': '50' },
+		{ 'cousrName': '急速之行', 'TrainName': 'Marco', 'Time': '1210', 'duration': '50' },
 	],
 
 	[
 		{ 'cousrName': 'Flow yoga 流瑜伽', 'TrainName': 'Yiyi', 'Time': '840', 'duration': '50' },
-		{ 'cousrName': 'Bodycombat 搏击', 'TrainName': 'Alan', 'Time': '600', 'duration': '50' },
+		{ 'cousrName': 'Bodycombat 有氧搏击', 'TrainName': 'Alan', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '1140', 'duration': '50' }
 	]
 ]
