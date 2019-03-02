@@ -18,8 +18,8 @@ var fjl = [
 	[
 		{ 'cousrName': 'Gentle Flow 绽放·流', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Hatha Yoga 哈他瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'CYCLE单车', 'TrainName': 'Hunter', 'Time': '1160', 'duration': '50' },
-		{ 'cousrName': 'CYCLE单车', 'TrainName': 'Hunter', 'Time': '1210', 'duration': '50' },
+		// { 'cousrName': 'CYCLE单车', 'TrainName': 'Hunter', 'Time': '1160', 'duration': '50' },
+		// { 'cousrName': 'CYCLE单车', 'TrainName': 'Hunter', 'Time': '1210', 'duration': '50' },
 	],
 
 	[
