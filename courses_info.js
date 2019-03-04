@@ -9,7 +9,7 @@ var fjl = [
 
 	[
 		{ 'cousrName': "Zumba 尊巴", 'TrainName': 'Amin', 'Time': '600', 'duration': '50' },
-		{ 'cousrName': 'TRX 悬吊训练', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'TRX 急速塑形', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
 		// 她家有事，请了几个月的假。
 		// { 'cousrName': 'CYCLE单车', 'TrainName': 'Joey', 'Time': '1210', 'duration': '50' },
