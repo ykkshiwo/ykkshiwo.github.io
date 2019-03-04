@@ -46,6 +46,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'Flow yoga 流瑜伽', 'TrainName': 'Yiyi', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Bodycombat 有氧搏击', 'TrainName': 'Alan', 'Time': '600', 'duration': '50' },
-		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '1140', 'duration': '50' }
+		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'CYCLE单车', 'TrainName': 'Queenie', 'Time': '1210', 'duration': '50' },
 	]
 ]

@@ -104,6 +104,18 @@ var data_group_trains =
 				],
 				projects: ["单车","空中瑜伽"]
 			},
+			{
+				en_name: "Queenie",
+				cn_name: "宋情",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201903/201903041228152111590.jpg",
+				certificates: [
+					// "哈他瑜伽注册教练",
+					// "空中瑜伽注册教练",
+					"单车注册教练",
+				],
+				projects: ["单车"]
+			},
 		]
 };
 
