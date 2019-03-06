@@ -257,23 +257,26 @@
 
 	</script>
 	<style>
-		html,body{
+		html,
+		body {
 			margin: 0;
 			height: 100%;
 			width: 100%;
 		}
-		.if_much_cousers{
+
+		.if_much_cousers {
 			display: flex;
-			flex-direction: column; 
-			justify-content:space-between;
+			flex-direction: column;
+			justify-content: space-between;
 			align-items: flex-start;
-/*			border: 1px solid yellow;*/
+			/*			border: 1px solid yellow;*/
 		}
-		.one_couser{
-/*			height: 65px; */
-/*			border: 1px red solid;*/
-			display: flex; 
-			flex-direction: column; 
+
+		.one_couser {
+			/*			height: 65px; */
+			/*			border: 1px red solid;*/
+			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: flex-start;
 			font-size: 12px;
@@ -281,95 +284,110 @@
 			margin-left: 5px;
 			padding-bottom: 5px;
 		}
-		.course_train_time{
-			display: flex; 
-			flex-direction: row; 
-			justify-content: center; 
-			align-items: center; 
+
+		.course_train_time {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
 			margin-top: 6px;
 		}
-		.tag{
+
+		.tag {
 			margin-right: 2px;
 			width: 12px;
 		}
-/*		选择所有id属性以d打头的span元素*/
-		span[id^="d"]{
-			color: rgb(150,150,150);
+
+		/*		选择所有id属性以d打头的span元素*/
+		span[id^="d"] {
+			color: rgb(150, 150, 150);
 		}
-		tr td:nth-child(1){
-			background-color: rgb(100,100,100);
+
+		tr td:nth-child(1) {
+			background-color: rgb(100, 100, 100);
 			color: white;
 			font-weight: bold;
 			font-size: 16px;
 		}
-		table{
-			border-collapse:collapse;
+
+		table {
+			border-collapse: collapse;
 			border: 1px solid white;
-			}
-		tr{
-			background-color:rgba(0, 0, 0, 0.38);
+		}
+
+		tr {
+			background-color: rgba(0, 0, 0, 0.38);
 			/* background-color: #28DD0C; */
 		}
-		.weather_day{
-			width:100px;
-/*			border:1px solid green;*/
+
+		.weather_day {
+			width: 100px;
+			/*			border:1px solid green;*/
 			text-align: center;
 		}
-		p{
-			border:0px red solid;
+
+		p {
+			border: 0px red solid;
 		}
-		#choose_course{
-			width: 42%; 
-			border: 1px solid red; 
-			text-align: center; 
-			letter-spacing: 30px; 
-			font-size: 28px; 
-			padding: 10px; 
-			border-radius:50px;
-			margin: 10px; 
-			background-color: darkgoldenrod;
-			box-shadow:5px 5px 5px black;
-		}
-		#choose_course:active{
-			box-shadow:3px 3px 5px black;
-			transform: translate(4px,4px);
-		}
-		#choose_group_trains{
-			float: left; 
-			width:60px; 
-			border: 1px red solid;
-			text-align: center; 
-			padding: 10px; 
-			width: 30%; 
+
+		#choose_course {
+			width: 42%;
+			border: 1px solid red;
+			text-align: center;
+			letter-spacing: 30px;
 			font-size: 28px;
-			margin: 10px; 
-			border-radius: 50px;
-			background-color: darkgoldenrod;
-			box-shadow:5px 5px 5px black;
-		}
-		#choose_group_trains:active{
-			box-shadow:3px 3px 5px black;
-			transform: translate(4px,4px);
-		}
-		#choose_personal_trains{
-			float: left; 
-			width: 25%; 
-			border: 1px solid red; 
 			padding: 10px;
-			text-align: center; 
+			border-radius: 50px;
+			margin: 10px;
+			background-color: darkgoldenrod;
+			box-shadow: 5px 5px 5px black;
+		}
+
+		#choose_course:active {
+			box-shadow: 3px 3px 5px black;
+			transform: translate(4px, 4px);
+		}
+
+		#choose_group_trains {
+			float: left;
+			width: 60px;
+			border: 1px red solid;
+			text-align: center;
+			padding: 10px;
+			width: 30%;
 			font-size: 28px;
-			margin: 10px; 
+			margin: 10px;
 			border-radius: 50px;
 			background-color: darkgoldenrod;
-			box-shadow:5px 5px 5px black;
+			box-shadow: 5px 5px 5px black;
 		}
-		#choose_personal_trains:active{
-			box-shadow:3px 3px 5px black;
-			transform: translate(4px,4px);
+
+		#choose_group_trains:active {
+			box-shadow: 3px 3px 5px black;
+			transform: translate(4px, 4px);
 		}
-/*		下面是教练的css妈的*/
-		.train_pic_text{
-/*			border: 1px solid yellow;*/
+
+		#choose_personal_trains {
+			float: left;
+			width: 25%;
+			border: 1px solid red;
+			padding: 10px;
+			text-align: center;
+			font-size: 28px;
+			margin: 10px;
+			border-radius: 50px;
+			background-color: darkgoldenrod;
+			box-shadow: 5px 5px 5px black;
+		}
+
+		#choose_personal_trains:active {
+			box-shadow: 3px 3px 5px black;
+			transform: translate(4px, 4px);
+		}
+
+		/*		下面是教练的css妈的*/
+		.train_pic_text {
+			/*			border: 1px solid yellow;*/
 			color: black;
 			width: 48%;
 			height: 400px;
@@ -380,12 +398,14 @@
 			justify-content: space-around;
 			align-items: flex-start;
 		}
-		.train_pic_text_left{
-			border: 2px solid rgb(181,181,181);
+
+		.train_pic_text_left {
+			border: 2px solid rgb(181, 181, 181);
 			width: 45%;
 			height: 70%;
 		}
-		.train_pic_text_right{
+
+		.train_pic_text_right {
 			border: 0px solid blue;
 			width: 45%;
 			height: 90%;
@@ -394,56 +414,64 @@
 			justify-content: flex-start;
 			align-items: flex-start;
 		}
-		.train_pic_text_left img{
+
+		.train_pic_text_left img {
 			width: 100%;
 		}
-		.train_pic_text_left p{
+
+		.train_pic_text_left p {
 			color: white;
 			font-size: 80px;
 			margin-top: 10px;
 			margin-left: 10px;
 			font-family: SimHei;
 		}
-		.train_name_position{
+
+		.train_name_position {
 			color: white;
 			font-size: 50px;
 			font-family: SimHei;
 			margin-top: 20px;
 		}
-		.train_name_position a{
+
+		.train_name_position a {
 			font-size: 20px;
 			margin-left: 10px;
 			color: white;
 		}
-		.teach_class{
+
+		.teach_class {
 			margin-top: 20px;
 			font-size: 30px;
-			color: rgb(181,181,181);
+			color: rgb(181, 181, 181);
 			font-family: SimHei;
 		}
-		.teach_class_concrete{
+
+		.teach_class_concrete {
 			margin-top: 20px;
 			border: 0px solid blue;
 			width: 100%;
-/*			height: 40%;*/
-			display: flex; 
-			flex-direction: row; 
-			flex-wrap: wrap; 
-			justify-content: flex-start; 
+			/*			height: 40%;*/
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
 			align-items: flex-start;
 		}
-		.hook_classname{
+
+		.hook_classname {
 			margin: 5px;
 			border: 0px solid red;
 			width: 45%;
 			height: 15%;
-			color: rgb(181,181,181);
+			color: rgb(181, 181, 181);
 			font-size: 32px;
 			font-family: SimHei;
 		}
-		.certificates{
+
+		.certificates {
 			margin-top: 20px;
-			color: rgb(181,181,181);
+			color: rgb(181, 181, 181);
 			font-size: 30px;
 			height: 40%;
 			width: 100%;
@@ -453,32 +481,40 @@
 </head>
 
 <body>
-	<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201901/201901310911217010420.jpg); background-repeat: no-repeat; background-size:100% 100%">
+	<div
+		style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201901/201901310911217010420.jpg); background-repeat: no-repeat; background-size:100% 100%">
 
 		<!--		显示天气预报-->
-		<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
+		<div
+			style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
 			<div id="specific_date" style="border: 0px red solid; font-size: 20px;">
 
 			</div>
-			<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
-				<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">12/18</div>
+			<div
+				style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
+				<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">
+					12/18</div>
 				<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
 				<div style="align-self: flex-end; border: 0px solid green; font-size: 25px;">c</div>
 			</div>
-			<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%;">
+			<div
+				style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%;">
 				<div id="day0" class="weather_day">
 					<!--					这里将今天的天气限定大小为100px，利用溢出隐藏和滤镜投影向右100px，图像向左偏移100px，这样显示出来就是投影的图像颜色-->
 					<div style="width: 100px; position: relative;overflow: hidden">
-						<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid rgba(1,1,1,0);position: relative; left: -100px;-webkit-filter: drop-shadow(100px 0px white)" />
+						<img src="https://cdn.heweather.com/cond_icon/101.png"
+							style="width: 100px; border: 1px solid rgba(1,1,1,0);position: relative; left: -100px;-webkit-filter: drop-shadow(100px 0px white)" />
 					</div>
 					<text style="color: white; font-size: 26px">11/11</text>
 				</div>
 				<div id="day1" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 0px solid yellow;" /></div>
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png"
+							style="width: 100%; border: 0px solid yellow;" /></div>
 					<text style="color: white; font-size: 26px">11/11</text>
 				</div>
 				<div id="day2" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100%; border: 0px solid yellow;" /></div>
+					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png"
+							style="width: 100%; border: 0px solid yellow;" /></div>
 					<text style="color: white; font-size: 26px">11/11</text>
 				</div>
 			</div>
@@ -486,14 +522,16 @@
 
 		<!--		时钟显示， 绝对定位在右上角-->
 
-		<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
+		<div id="timer"
+			style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
 			12:12 </div>
 
 		<!--		课程表修订， 绝对定位在右上角-->
-				<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
+		<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
 
 		<!--		将课程表格限定在此div中，默认课程显示-->
-		<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
+		<div id="courses"
+			style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
 			<table border="1" width="100%" height="100%" style="table-layout: fixed;box-shadow: 5px 5px 1px orange">
 				<tr style="height: 50px;border-bottom: 1px red solid">
 					<!--					第一行第一个单元格的宽度决定第一列的宽度-->
@@ -808,11 +846,13 @@
 		</div>
 
 		<!--		将私教介绍限定在此div中，默认课程不显示-->
-		<div id="personal_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background:rgba(0, 0, 0, 0.38)">
+		<div id="personal_trains"
+			style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background:rgba(0, 0, 0, 0.38)">
 		</div>
 
 		<!--		将团操限定在此div中，默认课程不显示-->
-		<div id="group_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background-color: rgba(0, 0, 0, 0.38)">
+		<div id="group_trains"
+			style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background-color: rgba(0, 0, 0, 0.38)">
 		</div>
 
 		<div style="width: 60%; height: 10%; border: 0px solid #28DD0C; font-family: SimHei; color:white;">
