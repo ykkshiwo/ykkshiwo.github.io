@@ -4,30 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>佑远评论 -- 90后</title>
+    <title>佑远评论 -- 阴雨天如何释压</title>
     <!--Leancloud 操作库:-->
     <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src=""></script>
     <!--Valine 的核心代码库:-->
     <script src="./Valineg.js"></script>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#gotoUyoung").click(function () {
+                var mymessage = confirm('"特惠健康餐" 为线下消费项目， 确认导航至佑远。');
+                if (mymessage == true) {
+                    window.location = 'http://3gimg.qq.com/lightmap/v1/wxmarker/index.html?marker=coord:29.31701215611605,120.08206735365093;title:%E4%BD%91%E8%BF%9CUYOUNG&referer=wexinmp_profile';
+                }
+                else if (mymessage == false) {
+                    return ;
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>
     <br>
     <div style="width: 100%;">
-        <a href="http://yy.rxmmd.net/Vshop/activitylist2?pid=1"><img src="http://yy.rxmmd.net/Storage/master/gallery/201903/201903011052507422940.jpg"
-                width="100%"></a>
+        <a href="http://yy.rxmmd.net/Vshop/activitylist2?pid=1"><img
+                src="http://yy.rxmmd.net/Storage/master/gallery/201903/201903011052507422940.jpg" width="100%"></a>
+    </div>
+    <div style="width: 100%;">
+        <img src="http://yy.rxmmd.net/Storage/master/gallery/201903/201903051059236041100.jpg" width="100%"
+            id="gotoUyoung">
     </div>
     <br />
     <hr>
     <p style="font-size: 12px; font-weight: bold; color:rgb(80, 80, 80); margin-bottom: 6px">尊敬的 佑远PLUS 粉丝：</p>
     <p style="font-size: 12px; color:rgb(80, 80, 80);margin: 0px">此评论系统为 <strong>佑远公司</strong> 搭建的健康生活交流平台。</p>
-    <p style="font-size: 12px; color:rgb(80, 80, 80); margin: 0px">您可直接评论，无需填写身份信息。<strong style="color: red">（有奖评论活动除外）</strong></p>
+    <p style="font-size: 12px; color:rgb(80, 80, 80); margin: 0px">您可直接评论，无需填写身份信息。<strong
+            style="color: red">（有奖评论活动除外）</strong></p>
     <p style="font-size: 12px; color:rgb(80, 80, 80); margin: 0px">请大家文明发言，尊重他人。</p>
     <p style="font-size: 12px; color:rgb(80, 80, 80); margin: 0px"><strong>免责申明：</strong>发言内容仅代表个人观点，不代表网站立场。</p>
     <hr>
     <br />
 
-    <div class="comment"></div>
+    <div class="comment" style="font-size: 16px;"></div>
     <script>
         new Valine({
             av: AV,
