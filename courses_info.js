@@ -17,8 +17,6 @@ var fjl = [
 	[
 		{ 'cousrName': 'Gentle Flow 绽放·流', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Hatha Yoga 哈他瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'Fat Aerobic 减脂有氧', 'TrainName': 'Darren', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'CYCLE 疯狂减脂', 'TrainName': 'Darren', 'Time': '1210', 'duration': '50' },
 	],
 
 	[
@@ -32,8 +30,6 @@ var fjl = [
 	[
 		{ 'cousrName': 'Pilates 修复普拉提', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'Sexy Butt 美臀', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
-		{ 'cousrName': 'BodyCombat 有氧搏击', 'TrainName': 'Darren', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'CYCLE 瘦身旅途', 'TrainName': 'Darren', 'Time': '1210', 'duration': '50' },
 	],
 
 	[
