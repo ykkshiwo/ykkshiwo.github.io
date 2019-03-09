@@ -6,7 +6,7 @@ var data_group_trains =
 			{
 				en_name: "Darren",
 				cn_name: "曾钟钟",
-				position: "佑远团操主管",
+				position: "佑远团操教练",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811051656455936190.jpg",
 				certificates: [
 					"Schwinn单车一星认证",
