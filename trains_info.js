@@ -4,18 +4,6 @@ var data_group_trains =
 	trains_info:
 		[
 			{
-				en_name: "Darren",
-				cn_name: "曾钟钟",
-				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811051656455936190.jpg",
-				certificates: [
-					"Schwinn单车一星认证",
-					"Train Fitness体系fight fx认证",
-					"莱美体系bodypump初始培训",
-				],
-				projects: ["bodypump", "莱美搏击", "CXWORD", "Fight FX", "PUMP FX", "Zumba", "Adidas训练课", "Schwinn"]
-			},
-			{
 				en_name: "Yiyi",
 				cn_name: "李玮秋",
 				position: "佑远团操教练",
