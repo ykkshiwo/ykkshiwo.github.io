@@ -21,7 +21,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'Yoga physical 理疗瑜伽', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Lumbar abdomen 腰腹塑形', 'TrainName': 'Marco', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': "Zumba 尊巴", 'TrainName': 'Amin', 'Time': '1220', 'duration': '50' },
+		// { 'cousrName': "Zumba 尊巴", 'TrainName': 'Amin', 'Time': '1220', 'duration': '50' },
 		{ 'cousrName': 'Hatha yoga 哈他瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'CYCLE 巅峰激情', 'TrainName': 'Marco', 'Time': '1210', 'duration': '50' },
 	],
