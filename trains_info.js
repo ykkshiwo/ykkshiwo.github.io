@@ -30,19 +30,19 @@ var data_group_trains =
 				],
 				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
 			},
-			{
-				en_name: "Alan",
-				cn_name: "艾伦",
-				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221629242033740.jpg",
-				certificates: [
-					"哈他瑜伽注册教练",
-					"动感单车注册教练",
-					"杠铃操注册教练",
-					"搏击操注册教练",
-				],
-				projects: ["动感单车","杠铃操","搏击操","哈他瑜伽","核心训练"]
-			},
+			// {
+			// 	en_name: "Alan",
+			// 	cn_name: "艾伦",
+			// 	position: "佑远团操教练",
+			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221629242033740.jpg",
+			// 	certificates: [
+			// 		"哈他瑜伽注册教练",
+			// 		"动感单车注册教练",
+			// 		"杠铃操注册教练",
+			// 		"搏击操注册教练",
+			// 	],
+			// 	projects: ["动感单车","杠铃操","搏击操","哈他瑜伽","核心训练"]
+			// },
 			{
 				en_name: "David",
 				cn_name: "大卫",
@@ -70,16 +70,16 @@ var data_group_trains =
 				],
 				projects: ["单车","杠铃操","搏击","腰腹核心","蹦床"]
 			},
-			{
-				en_name: "Joey",
-				cn_name: "灵儿",
-				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221629096250320.jpg",
-				certificates: [
-					"单车培训资格认证",
-				],
-				projects: ["单车"]
-			},
+			// {
+			// 	en_name: "Joey",
+			// 	cn_name: "灵儿",
+			// 	position: "佑远团操教练",
+			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221629096250320.jpg",
+			// 	certificates: [
+			// 		"单车培训资格认证",
+			// 	],
+			// 	projects: ["单车"]
+			// },
 			{
 				en_name: "Miya",
 				cn_name: "小雨",
