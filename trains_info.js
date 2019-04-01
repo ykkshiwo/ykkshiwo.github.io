@@ -4,6 +4,20 @@ var data_group_trains =
 	trains_info:
 		[
 			{
+				en_name: "Julia",
+				cn_name: "未央",
+				position: "佑远团操主管",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201812/201812151011402445200.jpg",
+				certificates: [
+					"理疗契合养生导师",
+					"哈他瑜伽注册教练",
+					"流瑜伽注册教练",
+					"阴瑜伽注册教练",
+					"热瑜伽注册教练",
+				],
+				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
+			},
+			{
 				en_name: "Yiyi",
 				cn_name: "李玮秋",
 				position: "佑远团操教练",
@@ -15,20 +29,6 @@ var data_group_trains =
 					"高温瑜伽瑜伽导师认证",
 				],
 				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽"]
-			},
-			{
-				en_name: "Julia",
-				cn_name: "未央",
-				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201812/201812151011402445200.jpg",
-				certificates: [
-					"理疗契合养生导师",
-					"哈他瑜伽注册教练",
-					"流瑜伽注册教练",
-					"阴瑜伽注册教练",
-					"热瑜伽注册教练",
-				],
-				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
 			},
 			// {
 			// 	en_name: "Alan",
@@ -56,42 +56,42 @@ var data_group_trains =
 				],
 				projects: ["爵士舞"]
 			},
-			{
-				en_name: "Marco",
-				cn_name: "马可",
-				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221727395371810.jpg",
-				certificates: [
-					"单车培训资格认证",
-					"杠铃培训资格认证",
-					"搏击培训资格认证",
-					"腰腹核心培训资格认证",
-					"蹦床培训资质证书",
-				],
-				projects: ["单车","杠铃操","搏击","腰腹核心","蹦床"]
-			},
 			// {
-			// 	en_name: "Joey",
-			// 	cn_name: "灵儿",
+			// 	en_name: "Marco",
+			// 	cn_name: "马可",
 			// 	position: "佑远团操教练",
-			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221629096250320.jpg",
+			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221727395371810.jpg",
 			// 	certificates: [
 			// 		"单车培训资格认证",
+			// 		"杠铃培训资格认证",
+			// 		"搏击培训资格认证",
+			// 		"腰腹核心培训资格认证",
+			// 		"蹦床培训资质证书",
 			// 	],
-			// 	projects: ["单车"]
+			// 	projects: ["单车","杠铃操","搏击","腰腹核心","蹦床"]
 			// },
 			{
-				en_name: "Miya",
-				cn_name: "小雨",
+				en_name: "Yur",
+				cn_name: "愉儿",
 				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902231734487493910.jpg",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201904/201904011818152751250.jpg",
 				certificates: [
-					"哈他瑜伽注册教练",
-					"空中瑜伽注册教练",
-					"单车注册教练",
+					"舞韵瑜伽培训资格认证",
 				],
-				projects: ["单车","空中瑜伽"]
+				projects: ["舞韵瑜伽"]
 			},
+			// {
+			// 	en_name: "Miya",
+			// 	cn_name: "小雨",
+			// 	position: "佑远团操教练",
+			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902231734487493910.jpg",
+			// 	certificates: [
+			// 		"哈他瑜伽注册教练",
+			// 		"空中瑜伽注册教练",
+			// 		"单车注册教练",
+			// 	],
+			// 	projects: ["单车", "空中瑜伽"]
+			// },
 			{
 				en_name: "Queenie",
 				cn_name: "宋情",
