@@ -3,7 +3,7 @@
 var fjl = [
 	[
 		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Miya', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'Body Pump 塑形杠铃', 'TrainName': 'Miya', 'Time': '1200', 'duration': '50' },
+		{ 'cousrName': 'Body Pump 塑形杠铃', 'TrainName': 'Miya', 'Time': '840', 'duration': '50' },
 	],
 
 	[
