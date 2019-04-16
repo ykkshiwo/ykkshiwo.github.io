@@ -40,7 +40,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'I Yoga 骨盆保养', 'TrainName': 'Yiyi', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Jazz爵士舞', 'TrainName': 'David', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'Hata Yoga', 'TrainName': 'Yiyi', 'Time': '1180', 'duration': '50' },
-		{ 'cousrName': 'CYCLE 魅力风情', 'TrainName': 'Queenie', 'Time': '1180', 'duration': '50' },
+		{ 'cousrName': 'Hata Yoga', 'TrainName': 'Yiyi', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'CYCLE 魅力风情', 'TrainName': 'Queenie', 'Time': '1190', 'duration': '50' },
 	]
 ]
