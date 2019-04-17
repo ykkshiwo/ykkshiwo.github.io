@@ -27,6 +27,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'I Yoga 经络养生', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Gentle Flow 绽放流', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
