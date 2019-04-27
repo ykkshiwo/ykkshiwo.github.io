@@ -31,11 +31,11 @@ var fjl = [
 	],
 
 	[
-		{ 'cousrName': 'Cycle 脂肪杀手', 'TrainName': 'Queenie', 'Time': '1190', 'duration': '50' },
-		{ 'cousrName': 'Jazz爵士舞', 'TrainName': 'David', 'Time': '1220', 'duration': '50' },
-		{ 'cousrName': 'Static Stretrc 静态拉伸', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
-		{ 'cousrName': 'I Yoga 肩颈深度修复', 'TrainName': 'Jack', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'Sexy Butt 美臀', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
+		// { 'cousrName': 'Cycle 脂肪杀手', 'TrainName': 'Queenie', 'Time': '1190', 'duration': '50' },
+		// { 'cousrName': 'Jazz爵士舞', 'TrainName': 'David', 'Time': '1220', 'duration': '50' },
+		// { 'cousrName': 'Static Stretrc 静态拉伸', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
+		// { 'cousrName': 'I Yoga 肩颈深度修复', 'TrainName': 'Jack', 'Time': '1140', 'duration': '50' },
+		// { 'cousrName': 'Sexy Butt 美臀', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 	],
 
 	[
