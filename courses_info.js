@@ -8,7 +8,7 @@ var fjl = [
 	],
 
 	[
-		{ 'cousrName': 'Power Flow 能量流瑜伽', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'I Yoga 脊柱养护', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 	],
