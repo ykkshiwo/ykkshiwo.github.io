@@ -20,16 +20,16 @@ var fjl = [
 	],
 
 	[
-		// { 'cousrName': 'Yoga physical 理疗瑜伽', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
-		// { 'cousrName': 'Body Banalce 身心平衡', 'TrainName': 'ice', 'Time': '840', 'duration': '50' },
-		// { 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
-		// { 'cousrName': 'Cycle 极速飞跃', 'TrainName': 'Yuan', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'Yoga physical 理疗瑜伽', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
+		{ 'cousrName': 'Body Banalce 身心平衡', 'TrainName': 'ice', 'Time': '840', 'duration': '50' },
+		{ 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'Cycle 极速飞跃', 'TrainName': 'Yuan', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
-		// { 'cousrName': 'I Yoga 经络养生', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
-		// { 'cousrName': 'Gentle Flow 绽放流', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
-		// { 'cousrName': 'Ready to go 决战巅峰', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'I Yoga 经络养生', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
+		{ 'cousrName': 'Gentle Flow 绽放流', 'TrainName': 'Julia', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'Ready to go 决战巅峰', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
