@@ -30,19 +30,6 @@ var data_group_trains =
 				],
 				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽"]
 			},
-			// {
-			// 	en_name: "Alan",
-			// 	cn_name: "艾伦",
-			// 	position: "佑远团操教练",
-			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221629242033740.jpg",
-			// 	certificates: [
-			// 		"哈他瑜伽注册教练",
-			// 		"动感单车注册教练",
-			// 		"杠铃操注册教练",
-			// 		"搏击操注册教练",
-			// 	],
-			// 	projects: ["动感单车","杠铃操","搏击操","哈他瑜伽","核心训练"]
-			// },
 			{
 				en_name: "David",
 				cn_name: "大卫",
@@ -56,20 +43,6 @@ var data_group_trains =
 				],
 				projects: ["爵士舞"]
 			},
-			// {
-			// 	en_name: "Marco",
-			// 	cn_name: "马可",
-			// 	position: "佑远团操教练",
-			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902221727395371810.jpg",
-			// 	certificates: [
-			// 		"单车培训资格认证",
-			// 		"杠铃培训资格认证",
-			// 		"搏击培训资格认证",
-			// 		"腰腹核心培训资格认证",
-			// 		"蹦床培训资质证书",
-			// 	],
-			// 	projects: ["单车","杠铃操","搏击","腰腹核心","蹦床"]
-			// },
 			{
 				en_name: "Yur",
 				cn_name: "愉儿",
@@ -80,29 +53,68 @@ var data_group_trains =
 				],
 				projects: ["舞韵瑜伽"]
 			},
-			// {
-			// 	en_name: "Miya",
-			// 	cn_name: "小雨",
-			// 	position: "佑远团操教练",
-			// 	img: "http://yy.rxmmd.net/Storage/master/gallery/201902/201902231734487493910.jpg",
-			// 	certificates: [
-			// 		"哈他瑜伽注册教练",
-			// 		"空中瑜伽注册教练",
-			// 		"单车注册教练",
-			// 	],
-			// 	projects: ["单车", "空中瑜伽"]
-			// },
+			{
+				en_name: "Jack",
+				cn_name: "大海",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905060938393265080.jpg",
+				certificates: [
+					"哈他瑜伽注册教练",
+					"空中瑜伽注册教练",
+				],
+				projects: ["空中瑜伽", "物理修复"]
+			},
 			{
 				en_name: "Queenie",
 				cn_name: "宋情",
 				position: "佑远团操教练",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201903/201903041228152111590.jpg",
 				certificates: [
-					// "哈他瑜伽注册教练",
-					// "空中瑜伽注册教练",
 					"单车注册教练",
 				],
 				projects: ["单车"]
+			},
+			{
+				en_name: "Baron",
+				cn_name: "男爵",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905060938393265080.jpg",  //匿名照片
+				certificates: [
+					"动感单车注册教练",
+				],
+				projects: ["动感单车"]
+			},
+			{
+				en_name: "Lina",
+				cn_name: "丽娜",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905060938393265080.jpg",  //匿名照片
+				certificates: [
+					"动感单车注册教练",
+				],
+				projects: ["动感单车"]
+			},
+			{
+				en_name: "Ice",
+				cn_name: "冰冰",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905060938393265080.jpg",
+				certificates: [
+					"哈他瑜伽注册教练",
+					"空中瑜伽注册教练",
+				],
+				projects: ["瑜伽",]
+			},
+			{
+				en_name: "Arno",
+				cn_name: "阿诺",
+				position: "佑远团操教练",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905060938393265080.jpg",
+				certificates: [
+					"单车培训资格认证",
+					"蹦床培训资质证书",
+				],
+				projects: ["瑜伽", "单车", "有氧", "蹦床"]
 			},
 		]
 };
