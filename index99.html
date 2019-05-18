@@ -167,6 +167,15 @@
 
 			/**************************以上timer*****************************/
 
+			/**************************以下kendo*****************************/
+
+			mm_2 = [2, 1, 7, 6, 5, 4, 3];
+			mm_5 = [5, 4, 3, 2, 1, 7, 6];
+			today_week = getDayNormal();
+			$("#kendo td:eq(" + mm_2[today_week-1] + ")").css({"background": "url(http://yy.rxmmd.net/Storage/master/gallery/201905/201905181726052047840.jpg)", "background-size": "100% 100%"});
+			$("#kendo td:eq(" + mm_5[today_week-1] + ")").css({"background": "url(http://yy.rxmmd.net/Storage/master/gallery/201905/201905181726052047840.jpg)", "background-size": "100% 100%"});
+			/**************************以上kendo*****************************/
+
 
 
 			//首先需要知道今天是星期几，也就是whatday。
@@ -677,7 +686,7 @@
 						</div>
 					</td>
 				</tr>
-				<tr>
+				<tr id="kendo">
 					<td>
 						19:00
 					</td>

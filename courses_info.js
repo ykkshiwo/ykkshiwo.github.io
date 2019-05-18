@@ -17,6 +17,7 @@ var fjl = [
 		{ 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Zumba 尊巴', 'TrainName': 'Ice', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'I Yoga 精准', 'TrainName': 'Yiyi', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
 	],
 
 	[
@@ -38,6 +39,7 @@ var fjl = [
 		{ 'cousrName': 'I Yoga 肩颈深度修复', 'TrainName': 'Jack', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'Sexy Butt 有氧美臀', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
 	],
 
 	[
