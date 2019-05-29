@@ -78,7 +78,7 @@ var data_group_trains =
 				en_name: "Baron",
 				cn_name: "男爵",
 				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905060938393265080.jpg",  //匿名照片
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201905/201905291234246896350.jpg",  //匿名照片
 				certificates: [
 					"动感单车注册教练",
 				],
