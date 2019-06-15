@@ -19,6 +19,7 @@ var fjl = [
 		{ 'cousrName': 'Zumba 尊巴', 'TrainName': 'Ice', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'I Yoga 肩颈深度修复', 'TrainName': 'Jack', 'Time': '1140', 'duration': '50' },
 		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
+		{ 'cousrName': 'Cycle单车', 'TrainName': 'Amy', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
