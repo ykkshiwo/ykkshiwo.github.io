@@ -19,7 +19,7 @@ var fjl = [
 		{ 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Zumba 尊巴', 'TrainName': 'Ice', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'I Yoga 肩颈深度修复', 'TrainName': 'Jack', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
+		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1155', 'duration': '90' },
 		{ 'cousrName': 'Cycle单车', 'TrainName': 'Amy', 'Time': '1190', 'duration': '50' },
 	],
 
@@ -40,7 +40,7 @@ var fjl = [
 		{ 'cousrName': 'I Yoga 经络养生', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Body Show 有氧魔力瘦', 'TrainName': 'Yiyi', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
-		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
+		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1155', 'duration': '90' },
 	],
 
 	[
