@@ -31,13 +31,13 @@ var fjl = [
 	[
 		{ 'cousrName': 'Flow Yoga 流瑜伽', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '60' },
 		{ 'cousrName': 'Body Show 有氧魔力瘦', 'TrainName': 'Yiyi', 'Time': '1155', 'duration': '50' },
-		// { 'cousrName': 'Ready to go 决战巅峰', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'Ready to go 决战巅峰', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
 		{ 'cousrName': 'Static Stretrc 静态拉伸', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Gentle Flow 绽放流', 'TrainName': 'Julia', 'Time': '1155', 'duration': '50' },
-		// { 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
 	],
 
