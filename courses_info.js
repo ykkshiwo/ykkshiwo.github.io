@@ -16,7 +16,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '600', 'duration': '60' },
 		{ 'cousrName': 'Dance 韩舞', 'TrainName': 'Alice', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
+		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
 		{ 'cousrName': 'Cycle极速飞跃', 'TrainName': 'Amy', 'Time': '1190', 'duration': '50' },
 	],
 
@@ -38,7 +38,7 @@ var fjl = [
 		{ 'cousrName': 'Static Stretrc 静态拉伸', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Gentle Flow 绽放流', 'TrainName': 'Julia', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
-		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1140', 'duration': '90' },
+		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
 	],
 
 	[
