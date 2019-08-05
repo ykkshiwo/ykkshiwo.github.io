@@ -4,7 +4,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Body Step 有氧踏板', 'TrainName': 'Arno', 'Time': '1155', 'duration': '50' },
-		// { 'cousrName': 'Cycle 脂肪杀手', 'TrainName': 'Arno', 'Time': '1210', 'duration': '50' },
+		{ 'cousrName': 'Cycle 脂肪杀手', 'TrainName': 'Arno', 'Time': '1210', 'duration': '50' },
 	],
 
 	[
@@ -44,6 +44,6 @@ var fjl = [
 	[
 		{ 'cousrName': 'Sexy Butt 有氧美臀', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Miya', 'Time': '1155', 'duration': '50' },
-		// { 'cousrName': 'Cycle 激情燃烧', 'TrainName': 'Judy', 'Time': '1190', 'duration': '50' },
+		{ 'cousrName': 'Cycle 激情燃烧', 'TrainName': 'Judy', 'Time': '1190', 'duration': '50' },
 	]
 ]
