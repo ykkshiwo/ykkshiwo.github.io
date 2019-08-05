@@ -25,7 +25,7 @@ var fjl = [
 		{ 'cousrName': 'Body Banalce 身心平衡', 'TrainName': 'Ice', 'Time': '710', 'duration': '60' },
 		{ 'cousrName': 'I Yoga 精准', 'TrainName': 'Yiyi', 'Time': '1155', 'duration': '50' },
 		// { 'cousrName': 'Barbell 功能杠铃', 'TrainName': '隆多', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Cycle 极速飞跃', 'TrainName': 'Lina', 'Time': '1190', 'duration': '50' },
+		// { 'cousrName': 'Cycle 极速飞跃', 'TrainName': 'Lina', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
