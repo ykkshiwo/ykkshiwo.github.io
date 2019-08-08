@@ -4,7 +4,7 @@ var fjl = [
 	[
 		{ 'cousrName': 'Yin yoga 阴瑜伽', 'TrainName': 'Yiyi', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Body Step 有氧踏板', 'TrainName': 'Arno', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Cycle 脂肪杀手', 'TrainName': 'Arno', 'Time': '1210', 'duration': '50' },
+		// { 'cousrName': 'Cycle 脂肪杀手', 'TrainName': 'Arno', 'Time': '1210', 'duration': '50' },
 	],
 
 	[
@@ -31,19 +31,19 @@ var fjl = [
 	[
 		{ 'cousrName': 'Flow Yoga 流瑜伽', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '60' },
 		{ 'cousrName': 'Body Show 有氧魔力瘦', 'TrainName': 'Yiyi', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Ready to go 决战巅峰', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
+		// { 'cousrName': 'Ready to go 决战巅峰', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 	],
 
 	[
 		{ 'cousrName': 'Static Stretrc 静态拉伸', 'TrainName': 'Yiyi', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Gentle Flow 绽放流', 'TrainName': 'Julia', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
+		// { 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1190', 'duration': '50' },
 		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
 	],
 
 	[
 		{ 'cousrName': 'Sexy Butt 有氧美臀', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Miya', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Cycle 激情燃烧', 'TrainName': 'Judy', 'Time': '1190', 'duration': '50' },
+		// { 'cousrName': 'Cycle 激情燃烧', 'TrainName': 'Judy', 'Time': '1190', 'duration': '50' },
 	]
 ]
