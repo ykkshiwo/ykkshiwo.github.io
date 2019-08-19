@@ -43,6 +43,6 @@ var fjl = [
 	[
 		{ 'cousrName': 'Sexy Butt 有氧美臀', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Miya', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Cycle 激情燃烧', 'TrainName': 'Judy', 'Time': '1170', 'duration': '50' },
+		// { 'cousrName': 'Cycle 激情燃烧', 'TrainName': 'Judy', 'Time': '1170', 'duration': '50' },
 	]
 ]
