@@ -168,19 +168,5 @@ var data_person_trains =
 				],
 				projects: ["减脂", "塑形", "拉伸"]
 			},
-			{
-				en_name: "Yi Wang",
-				cn_name: "王艺",
-				"img": "http://yy.rxmmd.net/Storage/master/gallery/201812/201812271022119220360.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"国家级健身指导员",
-					"AASFP高级私人教练",
-					"MFT泰拳格斗教练",
-					"苏萨坤泰拳教练",
-					"昆仑决签约选手",
-				],
-				projects: ["减脂", "塑形", "格斗"]
-			},
 		]
 };
