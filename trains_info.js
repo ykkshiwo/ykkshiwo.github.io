@@ -127,7 +127,7 @@ var data_person_trains =
 			{
 				en_name: "Echo",
 				cn_name: "张慧丽",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906387.jpg",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214001570.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格证书",
@@ -142,7 +142,7 @@ var data_person_trains =
 			{
 				en_name: "Alick Li",
 				cn_name: "李文华",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426750231.jpg",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157821.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"国家职业资格认证",
@@ -155,7 +155,7 @@ var data_person_trains =
 			{
 				en_name: "Flute Wang",
 				cn_name: "王天将",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201811/201811221924426906386.jpg",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157823.jpg",
 				position: "佑远私人教练",
 				certificates: [
 					"CPR应急救护",
