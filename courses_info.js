@@ -22,7 +22,7 @@ var fjl = [
 		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1150', 'duration': '50' },
 		{ 'cousrName': 'Dance 韩舞', 'TrainName': 'Alice', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
-		{ 'cousrName': 'Cycle极速飞跃', 'TrainName': 'Amy', 'Time': '1170', 'duration': '50' },
+		{ 'cousrName': 'Cycle极速飞跃', 'TrainName': 'Amy', 'Time': '1215', 'duration': '50' },
 	],
 
 	[
