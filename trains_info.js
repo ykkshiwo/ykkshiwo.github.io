@@ -125,21 +125,6 @@ var data_person_trains =
 	trains_info:
 		[
 			{
-				en_name: "Echo",
-				cn_name: "张慧丽",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214001570.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"国家职业资格证书",
-					"红十字会急救员证",
-					"功能性训练技能鉴定证书",
-					"普拉提（康复训练）技能鉴定证书",
-					"运动康复3M拉伸技能鉴定证书",
-					"拳课技能鉴定证书",
-				],
-				projects: ["拉伸", "增肌", "减脂", "塑形"]
-			},
-			{
 				en_name: "Alick",
 				cn_name: "李文华",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157821.jpg",
@@ -169,21 +154,6 @@ var data_person_trains =
 					"运动复健师认证",
 					"国家体育总局健身教练职业资格认证",
 					"博西斯顿形体雕刻师课认证"
-				],
-				projects: ["减脂", "塑形", "拉伸"]
-			},
-			{
-				en_name: " Kevin",
-				cn_name: "田开拓",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157824.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"卡玛效能精准减脂认证",
-					"AASFP体适能教练认证",
-					"卡玛效能精准拉伸认证",
-					"健身教练国家职业资格证书",
-					"国家社会体育指导员", 
-					"卡玛效能精准训练认证"
 				],
 				projects: ["减脂", "塑形", "拉伸"]
 			},
