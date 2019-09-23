@@ -21,7 +21,7 @@ var fjl = [
 		{ 'cousrName': 'Yin Yoga 阴瑜伽', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1165', 'duration': '50' },
 		{ 'cousrName': 'Dance 韩舞', 'TrainName': 'Alice', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
+		// { 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
 		{ 'cousrName': 'Cycle极速飞跃', 'TrainName': 'Amy', 'Time': '1230', 'duration': '50' },
 	],
 
@@ -47,7 +47,7 @@ var fjl = [
 		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1165', 'duration': '50' },
 		{ 'cousrName': 'Gentle Flow 绽放·流', 'TrainName': 'Julia', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Ready to go 激情四射', 'TrainName': 'Baron', 'Time': '1230', 'duration': '50' },
-		{ 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
+		// { 'cousrName': 'Kendo 剑道', 'TrainName': '周九如', 'Time': '1170', 'duration': '90' },
 	],
 
 	[
