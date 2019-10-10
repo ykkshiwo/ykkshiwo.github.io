@@ -9,9 +9,9 @@ var fjl = [
 
 	[
 		// 周一
-		{ 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '1150', 'duration': '50' },
+		{ 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '1210', 'duration': '50' },
 		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1170', 'duration': '50' },
-		{ 'cousrName': 'Dance 有氧舞蹈', 'TrainName': 'Anna', 'Time': '1155', 'duration': '50' },
+		{ 'cousrName': 'Dance 有氧舞蹈', 'TrainName': 'Anna', 'Time': '1150', 'duration': '50' },
 	],
 
 	[
@@ -32,7 +32,6 @@ var fjl = [
 
 	[
 		// 周四
-		{ 'cousrName': 'I Yoga 拜日', 'TrainName': 'Julia', 'Time': '600', 'duration': '60' },
 		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1170', 'duratio': '50' },
 		{ 'cousrName': 'I Yoga 骨盆修复', 'TrainName': 'Julia', 'Time': '1155', 'duration': '50' },
 	],
