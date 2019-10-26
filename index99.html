@@ -89,7 +89,7 @@
 		function getDayNormal() {
 			var d = new Date();
 			var whatday = d.getDay();
-			if (whatday == 0) {
+			if (whatday == 0) { 
 				return 7;
 			}
 			else {
@@ -166,6 +166,45 @@
 			window.setInterval(shownowtime, 200);
 
 			/**************************以上timer*****************************/
+			
+			/**************************上课前15分钟提示*****************************/
+			
+			function getTodayCourses(){  //获取今天的具体课程
+				var d = new Date();
+				var today = d.getDay();
+				var today_courses = fjl[today];
+				return today_courses;
+			}
+			
+			function getMins_of_nowTime_minus_courseTime(courseTime){  //计算现在时间与课程时间的差值(单位：分钟)
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var mins = h * 60 + m - courseTime;
+				return mins;
+			}
+			
+			function find_lineNumber_of_courseTime(coursesTimeArray, coursesTime){  //计算某节课的时间在第几行
+				var coursesTimeArrayLength = coursesTimeArray.length;
+				for (i = 0; i < coursesTimeArrayLength; i++) {
+				     if(coursesTimeArray[i] == coursesTime){
+						 return i;
+						 break;
+					 }
+				}
+			}
+			
+			function remind_course_start_color(){
+				
+			}
+			
+			var today_courses = getTodayCourses();
+			
+			
+			getTodayCourses();
+			var t = getMins_of_nowTime_minus_courseTime(1150);
+			console.log(t);
+			/**************************上课前15分钟提示*****************************/
 
 			/**************************以下kendo*****************************/
 
