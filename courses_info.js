@@ -17,7 +17,7 @@ var fjl = [
 	[
 		// 周二
 		{ 'cousrName': 'Flow Yoga 流瑜伽', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
-		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1170', 'duration': '50' },
+		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '750', 'duration': '50' },
 		{ 'cousrName': 'Dance 韩舞', 'TrainName': 'Alice', 'Time': '1155', 'duration': '50' },
 		{ 'cousrName': 'Power Yoga 肩颈理疗', 'TrainName': '丛姗', 'Time': '1150', 'duration': '50' },
 	],

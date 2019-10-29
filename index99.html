@@ -198,11 +198,19 @@
 				$("table tr:eq(" + row + ") td:eq("+ column +")").css("backgroundColor",color);
 			}
 			
-			remind_course_start_color("red", 3, 4);
-			
-			getTodayCourses();
-			var t = getMins_of_nowTime_minus_courseTime(1150);
-			console.log(t);
+			var today_courses = getTodayCourses();
+			console.log(today_courses);
+			for (i=0; i < today_courses.length; i++){
+				var today_course_time = today_courses[i].Time;
+				console.log( today_course_time );
+				var nowTime_minus_courseTime = getMins_of_nowTime_minus_courseTime( today_course_time );
+				console.log( nowTime_minus_courseTime );
+				if( -15 < nowTime_minus_courseTime & nowTime_minus_courseTime<0 ){
+					console.log( nowTime_minus_courseTime );
+					var course_row = find_lineNumber_of_courseTime(course_interval, today_course_time);
+					console.log(course_row + 1);
+				}
+			}
 			
 			/**************************上课前15分钟提示*****************************/
 
