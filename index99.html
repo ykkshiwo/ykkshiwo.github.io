@@ -194,16 +194,16 @@
 				}
 			}
 			
-			function remind_course_start_color(){
-				
+			function remind_course_start_color(color, row, column){  //选择课表中特定的单元格,并变化其背景颜色
+				$("table tr:eq(" + row + ") td:eq("+ column +")").css("backgroundColor",color);
 			}
 			
-			var today_courses = getTodayCourses();
-			
+			remind_course_start_color("red", 3, 4);
 			
 			getTodayCourses();
 			var t = getMins_of_nowTime_minus_courseTime(1150);
 			console.log(t);
+			
 			/**************************上课前15分钟提示*****************************/
 
 			/**************************以下kendo*****************************/
@@ -630,7 +630,7 @@
 					<td>
 						10:00
 					</td>
-					<td>
+					<td style="">
 						<div class="if_much_cousers">
 						</div>
 					</td>
