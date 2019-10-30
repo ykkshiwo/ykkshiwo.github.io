@@ -1,22 +1,22 @@
 <!doctype html>
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<!--	禁止放大-->
-	<meta name="viewport" content=" maximum-scale=1.0, user-scalable=0">
-	<title>课程表</title>
-	<!--	<link rel="stylesheet" href="./introduceOfTrains.css" />-->
-	<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+	<head>
+		<meta charset="utf-8">
+		<!--	禁止放大-->
+		<meta name="viewport" content=" maximum-scale=1.0, user-scalable=0">
+		<title>课程表</title>
+		<!--	<link rel="stylesheet" href="./introduceOfTrains.css" />-->
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 
-	<!--	handlebars模板语言-->
-	<script src="./handlebars-v4.0.12.js"></script>
-	<!--	课程信息js文件导入-->
-	<script src="./courses_info.js"></script>
-	<script>
+		<!--	handlebars模板语言-->
+		<script src="./handlebars-v4.0.12.js"></script>
+		<!--	课程信息js文件导入-->
+		<script src="./courses_info.js"></script>
+		<script>
 
-		//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
-		var course_interval = [ 525, 600, 840, 1150, 1155, 1170, 1210, 1215, 1230 ]
+			//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
+		var course_interval = [ 525, 600, 840, 1140, 1155, 1170, 1200, 1215, 1230 ]
 		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
 		function whereCourse() {
 			var d = new Date();
@@ -167,7 +167,7 @@
 
 			/**************************以上timer*****************************/
 			
-			/**************************上课前15分钟提示*****************************/
+			/**************************上课前提示*****************************/
 			
 			function getTodayCourses(){  //获取今天的具体课程
 				var d = new Date();
@@ -198,21 +198,53 @@
 				$("table tr:eq(" + row + ") td:eq("+ column +")").css("backgroundColor",color);
 			}
 			
-			var today_courses = getTodayCourses();
-			console.log(today_courses);
-			for (i=0; i < today_courses.length; i++){
-				var today_course_time = today_courses[i].Time;
-				console.log( today_course_time );
-				var nowTime_minus_courseTime = getMins_of_nowTime_minus_courseTime( today_course_time );
-				console.log( nowTime_minus_courseTime );
-				if( -15 < nowTime_minus_courseTime & nowTime_minus_courseTime<0 ){
+			
+			// function bright_quench( color1, color2, row, column ){      //执行背景色变量
+			// 	console.log("变色函数执行", colorNum);
+			// 	if(colorNum % 2 == 1){
+			// 		remind_course_start_color(color1, row, column);
+			// 	}else{
+			// 		remind_course_start_color(color2, row, column);
+			// 	}
+			// 	colorNum++
+			// }
+			
+			function go_back(interval, row, column){
+				console.log("开课提示结束。");
+				clearInterval(interval);
+				remind_course_start_color("rgba(0,0,0,0)", row, column); 
+			}
+			
+			function remind(color1, color2, row, column, mins){
+				var interval = setInterval(function(){ bright_quench_a(color1, color2, row, column) }, 800);    //0.8s后变暗.
+				setTimeout(function(){go_back(interval, row, column);}, mins * 60 * 1000 );
+			}
+			
+			//以下为每分钟执行一遍的函数.
+			function ti_shi(){
+				console.log("检查是否有课程需要提醒。")
+				var today_courses = getTodayCourses();
+				console.log(today_courses);
+				for (i=0; i < today_courses.length; i++){
+					var today_course_time = today_courses[i].Time;
+					console.log( today_course_time );
+					var nowTime_minus_courseTime = getMins_of_nowTime_minus_courseTime( today_course_time );
 					console.log( nowTime_minus_courseTime );
-					var course_row = find_lineNumber_of_courseTime(course_interval, today_course_time);
-					console.log(course_row + 1);
+					if( -15 < nowTime_minus_courseTime & nowTime_minus_courseTime<0 ){
+						console.log( "有课程需要提醒 ", nowTime_minus_courseTime );
+						var course_row = find_lineNumber_of_courseTime(course_interval, today_course_time);
+						console.log("提醒第几节课：", course_row + 1);
+						remind("red", "rgba(0,0,0,0)", course_row + 1, 1, 0.86);
+					}
 				}
 			}
 			
-			/**************************上课前15分钟提示*****************************/
+			// setInterval(function(){ bright_quench_a("red", "rgba(0,0,0,0)", 2, 2) }, 800);
+			// setInterval(function(){ bright_quench("red", "rgba(0,0,0,0)", 3, 3) }, 800);
+			
+			window.setInterval(ti_shi, 60 * 1000);
+			
+			/**************************上课前提示*****************************/
 
 			/**************************以下kendo*****************************/
 
@@ -257,11 +289,11 @@
 			function setRedline() {
 				var now_course = whereCourse();
 				var jquery_find_now_course = "tr:eq(" + now_course + ")"
-				console.log("这是每隔5分钟更新的数据:", jquery_find_now_course)
+				console.log("这是每隔1.5分钟更新的数据:", jquery_find_now_course)
 				$("tr:not(:first)").css({ "border-bottom": "1px solid white" });
 				$(jquery_find_now_course).css({ "border-bottom": "3px solid red" })
 			}
-			window.setInterval(setRedline, 1000 * 60 * 5);
+			window.setInterval(setRedline, 1000 * 60 * 1.5);
 
 			var now_course_ = whereCourse();
 			var jquery_find_now_course_ = "tr:eq(" + now_course_ + ")"
@@ -312,8 +344,8 @@
 		/*************************************以上为jQuery************************************/
 
 	</script>
-	<style>
-		html,
+		<style>
+			html,
 		body {
 			margin: 0;
 			height: 100%;
@@ -534,392 +566,381 @@
 			font-family: SimHei;
 		}
 	</style>
-</head>
+	</head>
 
-<body>
-	<div
-		style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201906/201906011000466765730.jpg); background-repeat: no-repeat; background-size:100% 100%">
+	<body>
+		<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201906/201906011000466765730.jpg); background-repeat: no-repeat; background-size:100% 100%">
 
-		<!--		显示天气预报-->
-		<div
-			style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
-			<div id="specific_date" style="border: 0px red solid; font-size: 20px;">
+			<!--		显示天气预报-->
+			<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
+				<div id="specific_date" style="border: 0px red solid; font-size: 20px;">
 
-			</div>
-			<div
-				style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
-				<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">
-					12/18</div>
-				<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
-				<div style="align-self: flex-end; border: 0px solid green; font-size: 25px;">c</div>
-			</div>
-			<div
-				style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%; background-color: rgba(0, 0, 0, 0.39); ">
-				<div id="day0" class="weather_day">
-					<!--					这里将今天的天气限定大小为100px，利用溢出隐藏和滤镜投影向右100px，图像向左偏移100px，这样显示出来就是投影的图像颜色-->
-					<div style="width: 100px; position: relative;overflow: hidden">
-						<img src="https://cdn.heweather.com/cond_icon/101.png"
-							style="width: 100px; border: 1px solid rgba(1,1,1,0);position: relative; left: -100px;-webkit-filter: drop-shadow(100px 0px white)" />
+				</div>
+				<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
+					<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">
+						12/18</div>
+					<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
+					<div style="align-self: flex-end; border: 0px solid green; font-size: 25px;">c</div>
+				</div>
+				<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%; background-color: rgba(0, 0, 0, 0.39); ">
+					<div id="day0" class="weather_day">
+						<!--					这里将今天的天气限定大小为100px，利用溢出隐藏和滤镜投影向右100px，图像向左偏移100px，这样显示出来就是投影的图像颜色-->
+						<div style="width: 100px; position: relative;overflow: hidden">
+							<img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100px; border: 1px solid rgba(1,1,1,0);position: relative; left: -100px;-webkit-filter: drop-shadow(100px 0px white)" />
+						</div>
+						<text style="color: white; font-size: 26px">11/11</text>
 					</div>
-					<text style="color: white; font-size: 26px">11/11</text>
-				</div>
-				<div id="day1" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png"
-							style="width: 100%; border: 0px solid yellow;" /></div>
-					<text style="color: white; font-size: 26px">11/11</text>
-				</div>
-				<div id="day2" class="weather_day">
-					<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png"
-							style="width: 100%; border: 0px solid yellow;" /></div>
-					<text style="color: white; font-size: 26px">11/11</text>
+					<div id="day1" class="weather_day">
+						<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/313.png" style="width: 100%; border: 0px solid yellow;" /></div>
+						<text style="color: white; font-size: 26px">11/11</text>
+					</div>
+					<div id="day2" class="weather_day">
+						<div style="width: 100%"><img src="https://cdn.heweather.com/cond_icon/101.png" style="width: 100%; border: 0px solid yellow;" /></div>
+						<text style="color: white; font-size: 26px">11/11</text>
+					</div>
 				</div>
 			</div>
+
+			<!--		时钟显示， 绝对定位在右上角-->
+
+			<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
+				12:12 </div>
+
+			<!--		课程表修订， 绝对定位在右上角-->
+			<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
+
+			<!--		将课程表格限定在此div中，默认课程显示-->
+			<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
+				<table border="1" width="100%" height="100%" style="table-layout: fixed;">
+					<tr style="height: 50px;border-bottom: 1px red solid">
+						<!--					第一行第一个单元格的宽度大胆的决定第一列的宽度-->
+						<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
+						<th><span id="1"></span></th>
+						<th><span id="2"></span></th>
+						<th><span id="3"></span></th>
+						<th><span id="4"></span></th>
+						<th><span id="5"></span></th>
+						<th><span id="6"></span></th>
+						<th><span id="7"></span></th>
+					</tr>
+					<tr>
+						<td>
+							08:45
+						</td>
+						<td>
+							<div class="if_much_cousers">
+
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							10:00
+						</td>
+						<td style="">
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							14:00
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							19:00
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							19:15
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							19:30
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							20:00
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							20:15
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							20:30
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+						<td>
+							<div class="if_much_cousers">
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+			<!--		将私教介绍限定在此div中，默认课程不显示-->
+			<div id="personal_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background:rgba(0, 0, 0, 0.38)">
+			</div>
+
+			<!--		将团操限定在此div中，默认课程不显示-->
+			<div id="group_trains" style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background-color: rgba(0, 0, 0, 0.38)">
+			</div>
+
+			<div style="width: 60%; height: 10%; border: 0px solid #28DD0C; font-family: SimHei; color:white;">
+				<div id="choose_course">课程表</div>
+				<div id="choose_group_trains">团操课教练</div>
+				<div id="choose_personal_trains"> 私教课教练</div>
+			</div>
 		</div>
-
-		<!--		时钟显示， 绝对定位在右上角-->
-
-		<div id="timer"
-			style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
-			12:12 </div>
-
-		<!--		课程表修订， 绝对定位在右上角-->
-		<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
-
-		<!--		将课程表格限定在此div中，默认课程显示-->
-		<div id="courses"
-			style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
-			<table border="1" width="100%" height="100%" style="table-layout: fixed;">
-				<tr style="height: 50px;border-bottom: 1px red solid">
-					<!--					第一行第一个单元格的宽度大胆的决定第一列的宽度-->
-					<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
-					<th><span id="1"></span></th>
-					<th><span id="2"></span></th>
-					<th><span id="3"></span></th>
-					<th><span id="4"></span></th>
-					<th><span id="5"></span></th>
-					<th><span id="6"></span></th>
-					<th><span id="7"></span></th>
-				</tr>
-				<tr>
-					<td>
-						08:45
-					</td>
-					<td>
-						<div class="if_much_cousers">
-
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						10:00
-					</td>
-					<td style="">
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						14:00
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						19:10
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						19:15
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						19:30
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						20:10
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						20:15
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						20:30
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-					<td>
-						<div class="if_much_cousers">
-						</div>
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<!--		将私教介绍限定在此div中，默认课程不显示-->
-		<div id="personal_trains"
-			style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background:rgba(0, 0, 0, 0.38)">
-		</div>
-
-		<!--		将团操限定在此div中，默认课程不显示-->
-		<div id="group_trains"
-			style="width: 100%; height: 65%; border: 2px solid white;box-sizing: border-box; color:black; overflow-y:auto; display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; background-color: rgba(0, 0, 0, 0.38)">
-		</div>
-
-		<div style="width: 60%; height: 10%; border: 0px solid #28DD0C; font-family: SimHei; color:white;">
-			<div id="choose_course">课程表</div>
-			<div id="choose_group_trains">团操课教练</div>
-			<div id="choose_personal_trains"> 私教课教练</div>
-		</div>
-	</div>
-	<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time"></a></div>
-</body>
-<script type="text/template" id="Train_moudel">
+		<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time"></a></div>
+	</body>
+	<script type="text/template" id="Train_moudel">
 		{{#each trains_info}}
 			<div class="train_pic_text">
 			<div class="train_pic_text_left">
@@ -950,24 +971,27 @@
 		</div>
 		{{/each}}
 	</script>
-<script src="./trains_info.js"></script>
-<script>
-	var tpl = $("#Train_moudel").html();
-	var template = Handlebars.compile(tpl);
-	var html = template(data_group_trains);
-	$('#group_trains').html(html);
+	<script src="./trains_info.js"></script>
+	<script src="./remind_courses.js"></script>
+	<script>
+		var tpl = $("#Train_moudel").html();
+		var template = Handlebars.compile(tpl);
+		var html = template(data_group_trains);
+		$('#group_trains').html(html);
 
-	var tpl = $("#Train_moudel").html();
-	var template = Handlebars.compile(tpl);
-	var html = template(data_person_trains);
-	$('#personal_trains').html(html);
-</script>
-<script>
-	window.onload = function () {
-		var t = new Date();
-		$("#update_time").append("<a>" + t + "</a>")
-		setTimeout(function () { location.reload() }, 2 * 60 * 60 * 1000) //2个小时刷新一次
-	}
-</script>
+		var tpl = $("#Train_moudel").html();
+		var template = Handlebars.compile(tpl);
+		var html = template(data_person_trains);
+		$('#personal_trains').html(html);
+	</script>
+	<script>
+		window.onload = function() {
+			var t = new Date();
+			$("#update_time").append("<a>" + t + "</a>")
+			setTimeout(function() {
+				location.reload()
+			}, 2 * 60 * 60 * 1000) //2个小时刷新一次
+		}
+	</script>
 
 </html>
