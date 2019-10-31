@@ -32,8 +32,9 @@ var fjl = [
 
 	[
 		// 周四
+		{ 'cousrName': 'I Yoga 拜日', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'I Yoga 骨盆修复', 'TrainName': 'Julia', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Nightclub Cycle 主题课', 'TrainName': '蒋毅', 'Time': '1170', 'duratio': '50' },
+		{ 'cousrName': 'Cycle 万圣节', 'TrainName': '蒋毅', 'Time': '1170', 'duratio': '50' },
 	],
 
 	[
