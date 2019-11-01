@@ -57,6 +57,8 @@
 			}
 		}
 
+
+
 		/**
 		 * 钟钟说：“把每一天的课程放在第一个位置上。”于是，我需要更改每一次读取的课程数组，
 		 * 具体变现为改变数组的顺序，将今天的课程放在第一位（0），以此类推即可。
@@ -230,7 +232,7 @@
 					console.log( today_course_time );
 					var nowTime_minus_courseTime = getMins_of_nowTime_minus_courseTime( today_course_time );
 					console.log( nowTime_minus_courseTime );
-					if( -15 < nowTime_minus_courseTime & nowTime_minus_courseTime<0 ){
+					if( -16 < nowTime_minus_courseTime & nowTime_minus_courseTime<0 ){
 						console.log( "有课程需要提醒 ", nowTime_minus_courseTime );
 						var course_row = find_lineNumber_of_courseTime(course_interval, today_course_time);
 						console.log("提醒第几节课：", course_row + 1);
