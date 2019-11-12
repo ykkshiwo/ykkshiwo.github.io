@@ -36,22 +36,6 @@ var data_person_trains =
 	trains_info:
 		[
 			{
-				en_name: "Alick",
-				cn_name: "李文华",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157821.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"国家职业资格认证",
-					"AFCC体适能专业认证",
-					"BPTC形体训练认证",
-					"运动康复3M拉伸认证",
-					"Boxing拳击认证",
-					"CPR应急救护认证",
-					"博西斯顿形体雕刻师课认证"
-				],
-				projects: ["增肌", "减脂", "塑形"]
-			},
-			{
 				en_name: "Flute Wang",
 				cn_name: "王天将",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157823.jpg",

@@ -4,7 +4,7 @@ var fjl = [
 	[
 		// 周日
 		{ 'cousrName': 'Power Yoga 流动后弯', 'TrainName': 'Pig', 'Time': '1140', 'duration': '50' },
-		{ 'cousrName': 'Cycle 激情之夜', 'TrainName': '赵彪', 'Time': '1170', 'duration': '50' },
+		{ 'cousrName': 'Cycle 激情之夜', 'TrainName': '赵彪', 'Time': '1180', 'duration': '50' },
 	],
 
 	[
