@@ -27,14 +27,13 @@ var fjl = [
 		// 周三
 		{ 'cousrName': 'Power Yoga 肩颈理疗', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
 		{ 'cousrName': 'pump杠铃', 'TrainName': '蒋毅', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Cycle 疯狂燃脂', 'TrainName': '赵彪', 'Time': '1170', 'duration': '50' },
 		{ 'cousrName': '核心', 'TrainName': '蒋毅', 'Time': '1215', 'duration': '30' },
 	],
 
 	[
 		// 周四
 		{ 'cousrName': 'I Yoga 拜日', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
-		{ 'cousrName': 'Cycle 狂欢之夜', 'TrainName': '蒋毅', 'Time': '1170', 'duratio': '50' },
+		{ 'cousrName': 'Cycle 狂欢之夜', 'TrainName': '赵彪', 'Time': '1170', 'duratio': '50' },
 		{ 'cousrName': 'I Yoga 骨盆修复', 'TrainName': 'Julia', 'Time': '1200', 'duration': '50' },
 	],
 
@@ -42,7 +41,6 @@ var fjl = [
 		// 周五
 		{ 'cousrName': 'I Yoga 静态拉伸', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		{ 'cousrName': '杠铃', 'TrainName': '蒋毅', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': 'Cycle 激情速度', 'TrainName': '赵彪', 'Time': '1170', 'duration': '50' },
 		{ 'cousrName': '核心', 'TrainName': '蒋毅', 'Time': '1215', 'duration': '30' },
 	],
 
