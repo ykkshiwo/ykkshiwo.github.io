@@ -52,6 +52,21 @@ var data_person_trains =
 	trains_info:
 		[
 			{
+				en_name: "Ethan",
+				cn_name: "李冬",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201912/201912131319312809510.jpg",
+				position: "佑远教练总监",
+				certificates: [
+					"V FITNESS普拉提教练认证",
+					"AASFP亚体高私优秀学员",
+					"ONEFITT体能训练认证",
+					"耐克NTC体能训练",
+					"EPTC精英私教认证", 
+					"MFT格斗训练认证"
+				],
+				projects: ["体态改善", "形体打造", "拒绝无效训练"]
+			},
+			{
 				en_name: "Flute Wang",
 				cn_name: "王天将",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157823.jpg",
@@ -112,6 +127,23 @@ var data_person_trains =
 					"戴健新健美技术认证"
 				],
 				projects: ["减脂", "塑形", "拉伸"]
+			},
+			{
+				en_name: "Jack",
+				cn_name: "金俊杰",
+				position: "佑远团操总监",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201912/201912131313381750560.jpg",
+				certificates: [
+					"中国健美协会CBBA健身教练认证",
+					"FO&CT运动损伤预防康复认证",
+					"CPR中国十字会急救认证",
+					"美国IHP功能性一级认证",
+					"中国运动营养师认证",
+					"国家认证健身规划师",
+					"MMA综合格斗认证",
+					"FPT体适能认证",
+				],
+				projects: ["塑形","增肌","减脂","拉伸","运动损伤预防处理","体态调整"]
 			},
 		]
 };
