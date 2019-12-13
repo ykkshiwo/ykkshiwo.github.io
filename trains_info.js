@@ -4,16 +4,32 @@ var data_group_trains =
 	trains_info:
 		[
 			{
+				en_name: "JiangYi",
+				cn_name: "蒋毅",
+				position: "佑远团操总监",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201912/201912131302260748350.jpg",
+				certificates: [
+					"BODY PUMP (莱美杠铃)课程认证",
+					"BODY COMBATA课程认证教练",
+					"CX（莱美核心）课程认证",
+					"国家一级健身教练指导员",
+					"团课私教两项全能性教练证书",
+					"BOKWA课程认证教练",
+					"南美热舞课程证书",
+				],
+				projects: ["高能塑形", "核心训练", "团操私教"]
+			},
+			{
 				en_name: "Julia",
 				cn_name: "未央",
-				position: "佑远团操教练",
+				position: " 佑远普拉提主教",
 				img: "http://yy.rxmmd.net/Storage/master/gallery/201812/201812151011402445200.jpg",
 				certificates: [
 					"理疗契合养生导师",
-					"哈他瑜伽注册教练",
-					"流瑜伽注册教练",
-					"阴瑜伽注册教练",
-					"热瑜伽注册教练",
+					"哈他瑜伽认证",
+					"流瑜伽认证",
+					"阴瑜伽认证",
+					"热瑜伽认证",
 				],
 				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
 			},
