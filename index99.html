@@ -298,7 +298,7 @@
 				var jquery_find_now_course = "tr:eq(" + now_course + ")"
 				console.log("这是每隔1.5分钟更新的数据:", jquery_find_now_course)
 				$("tr:not(:first)").css({ "border-bottom": "1px solid white" });
-				$(jquery_find_now_course).css({ "border-bottom": "3px solid red" })
+				$(jquery_find_now_course).css({ "border-bottom": "3px solid red"})
 			}
 			window.setInterval(setRedline, 1000 * 60 * 1.5);
 
@@ -445,8 +445,9 @@
 		}
 
 		tr td:nth-child(1) {
-			background-color: rgb(100, 100, 100);
-			color: white;
+			/* background-color: rgb(100, 100, 100); */
+			color: red;
+			border-color: yellow;
 			font-weight: bold;
 			font-size: 16px;
 		}
@@ -673,11 +674,11 @@
 			<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
 
 			<!--		将课程表格限定在此div中，默认课程显示-->
-			<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
+			<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: yellow;box-shadow:yellow 0px 0px 28px;">
 				<table border="1" width="100%" height="100%" style="table-layout: fixed;">
-					<tr style="height: 50px;border-bottom: 1px red solid">
+					<tr style="height: 50px;border-bottom: 1px red solid;color:white">
 						<!--					第一行第一个单元格的宽度大胆的决定第一列的宽度-->
-						<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
+						<th style="width: 6%;background-color: rgba(51,51,51,1.00);">时间</th>
 						<th><span id="1"></span></th>
 						<th><span id="2"></span></th>
 						<th><span id="3"></span></th>
