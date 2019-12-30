@@ -8,7 +8,12 @@
 		<title>课程表</title>
 		<!--	<link rel="stylesheet" href="./introduceOfTrains.css" />-->
 		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-
+		
+		<!-- 圣诞下雪插件 -->
+		<script src="./snowHoverTree/js/ThreeCanvas.js"></script>
+		<script src="./snowHoverTree/js/Snow.js"></script>
+		<script src="./snowHoverTree/js/snowFall.js"></script>
+		
 		<!--	handlebars模板语言-->
 		<script src="./handlebars-v4.0.12.js"></script>
 		<!--	课程信息js文件导入-->
@@ -293,7 +298,7 @@
 				var jquery_find_now_course = "tr:eq(" + now_course + ")"
 				console.log("这是每隔1.5分钟更新的数据:", jquery_find_now_course)
 				$("tr:not(:first)").css({ "border-bottom": "1px solid white" });
-				$(jquery_find_now_course).css({ "border-bottom": "3px solid red" })
+				$(jquery_find_now_course).css({ "border-bottom": "3px solid red"})
 			}
 			window.setInterval(setRedline, 1000 * 60 * 1.5);
 
@@ -340,6 +345,52 @@
 			});
 
 			/**************************以上选择课程表或私教，团操*****************************/
+			
+			
+			/*************************************以下为圣诞下雪************************************/
+			
+			$.snowFall({
+				//创建粒子数量，密度
+				particleNo: 500,
+				//粒子下拉速度
+				particleSpeed: 28,
+				//粒子在垂直（Y轴）方向运动范围
+				particleY_Range: 1300,
+				//粒子在垂直（X轴）方向运动范围
+				particleX_Range: 1000,
+				//是否绑定鼠标事件
+				bindMouse: false,
+				//相机离Z轴原点距离
+				zIndex: 500,
+				//摄像机视野角度
+				angle: 55,
+				wind_weight: 0
+			});
+			
+			var time = 0;
+			$('body').click(function () {
+				//判断计时器是否处于关闭状态
+				if (time == 0) {
+					time = 120; //设定间隔时间（秒）
+			
+					//启动计时器，倒计时time秒后自动关闭计时器。
+					var index = setInterval(function () {
+						time--;
+						if (time == 0) {
+							clearInterval(index);
+						}
+					}, 1000);
+			
+					console.log('按钮事件被触发');
+					$("#snowHere").toggle()
+					setTimeout(function () { $("#snowHere").toggle() }, 119000)
+				} else {
+					console.log('目前按钮事件不允许被触发');
+				}
+			});
+			
+			/*************************************以上为圣诞下雪************************************/
+
 
 		});
 
@@ -394,8 +445,9 @@
 		}
 
 		tr td:nth-child(1) {
-			background-color: rgb(100, 100, 100);
-			color: white;
+			/* background-color: rgb(100, 100, 100); */
+			color: red;
+			border-color: yellow;
 			font-weight: bold;
 			font-size: 16px;
 		}
@@ -429,8 +481,9 @@
 			padding: 10px;
 			border-radius: 50px;
 			margin: 10px;
-			background-color: darkgoldenrod;
+			background-color: rgba(1,1,1,0);
 			box-shadow: 5px 5px 5px black;
+			color: red
 		}
 
 		#choose_course:active {
@@ -448,8 +501,9 @@
 			font-size: 28px;
 			margin: 10px;
 			border-radius: 50px;
-			background-color: darkgoldenrod;
+			background-color: rgba(1,1,1,0);
 			box-shadow: 5px 5px 5px black;
+			color: red;
 		}
 
 		#choose_group_trains:active {
@@ -466,8 +520,9 @@
 			font-size: 28px;
 			margin: 10px;
 			border-radius: 50px;
-			background-color: darkgoldenrod;
+			background-color: rgba(1,1,1,0);
 			box-shadow: 5px 5px 5px black;
+			color: red;
 		}
 
 		#choose_personal_trains:active {
@@ -567,18 +622,25 @@
 			width: 100%;
 			font-family: SimHei;
 		}
+		
+		#snowHere {
+			height: 100%;
+			width: 100%;
+			z-index: 9900;
+			position: fixed
+		}
 	</style>
 	</head>
 
 	<body>
-		<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201906/201906011000466765730.jpg); background-repeat: no-repeat; background-size:100% 100%">
+		<div style="position:fixed;top:0;width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201912/201912211442243889940.jpg); background-repeat: no-repeat; background-size:100% 100%">
 
 			<!--		显示天气预报-->
 			<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
-				<div id="specific_date" style="border: 0px red solid; font-size: 20px;">
+				<div id="specific_date" style="border: 0px red solid; font-size: 20px;color: red">
 
 				</div>
-				<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
+				<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start;color:red; text-shadow:0 0 0.6em red, -0 -0 0.6em yellow;">
 					<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">
 						12/18</div>
 					<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
@@ -605,18 +667,18 @@
 
 			<!--		时钟显示， 绝对定位在右上角-->
 
-			<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
+			<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: red;text-shadow:0 0 0.2em red, -0 -0 0.2em yellow;">
 				12:12 </div>
 
 			<!--		课程表修订， 绝对定位在右上角-->
 			<!-- <div id="change" style="position: absolute; top: 110px; right: 25px; font-size: 36px;color: rgb(211, 233, 12)"> 此课程表暂行：02/15-3/01 </div> -->
 
 			<!--		将课程表格限定在此div中，默认课程显示-->
-			<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;">
+			<div id="courses" style="width: 100%; height: 65%; border: 0px solid blue;box-sizing: border-box; color: white;box-shadow:yellow 0px 0px 28px;">
 				<table border="1" width="100%" height="100%" style="table-layout: fixed;">
-					<tr style="height: 50px;border-bottom: 1px red solid">
+					<tr style="height: 50px;border-bottom: 1px red solid;color:white">
 						<!--					第一行第一个单元格的宽度大胆的决定第一列的宽度-->
-						<th style="width: 6%;background-color: rgba(51,51,51,1.00)">时间</th>
+						<th style="width: 6%;background-color: rgba(51,51,51,1.00);">时间</th>
 						<th><span id="1"></span></th>
 						<th><span id="2"></span></th>
 						<th><span id="3"></span></th>
@@ -973,7 +1035,7 @@
 				<div id="choose_personal_trains"> 私教课教练</div>
 			</div>
 		</div>
-		<div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time"></a></div>
+		<!-- <div style="position: fixed; bottom: 10px; right: 10px;">更新时间：<a id="update_time"></a></div> -->
 	</body>
 	<script type="text/template" id="Train_moudel">
 		{{#each trains_info}}
