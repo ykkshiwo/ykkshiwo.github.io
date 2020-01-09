@@ -25,9 +25,9 @@ var fjl = [
 
 	[
 		// 周三
-		{ 'cousrName': 'Power Yoga 肩颈理疗', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
-		{ 'cousrName': 'pump杠铃', 'TrainName': '蒋毅', 'Time': '1155', 'duration': '50' },
-		{ 'cousrName': '核心', 'TrainName': '蒋毅', 'Time': '1215', 'duration': '30' },
+		//{ 'cousrName': 'Power Yoga 肩颈理疗', 'TrainName': 'Julia', 'Time': '600', 'duration': '50' },
+		//{ 'cousrName': 'pump杠铃', 'TrainName': '蒋毅', 'Time': '1155', 'duration': '50' },
+		//{ 'cousrName': '核心', 'TrainName': '蒋毅', 'Time': '1215', 'duration': '30' },
 	],
 
 	[
