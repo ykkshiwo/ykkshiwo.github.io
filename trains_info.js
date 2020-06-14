@@ -33,16 +33,6 @@ var data_group_trains =
 				],
 				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
 			},
-			{
-				en_name: "Yur",
-				cn_name: "愉儿",
-				position: "佑远团操教练",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201904/201904011818152751250.jpg",
-				certificates: [
-					"舞韵瑜伽培训资格认证",
-				],
-				projects: ["舞韵瑜伽"]
-			},
 		]
 };
 
@@ -129,21 +119,18 @@ var data_person_trains =
 				projects: ["减脂", "塑形", "拉伸"]
 			},
 			{
-				en_name: "Jack",
-				cn_name: "金俊杰",
-				position: "佑远团操总监",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201912/201912131313381750560.jpg",
+				en_name: "Julia",
+				cn_name: "未央",
+				position: " 佑远普拉提主教",
+				img: "http://yy.rxmmd.net/Storage/master/gallery/201812/201812151011402445200.jpg",
 				certificates: [
-					"中国健美协会CBBA健身教练认证",
-					"FO&CT运动损伤预防康复认证",
-					"CPR中国十字会急救认证",
-					"美国IHP功能性一级认证",
-					"中国运动营养师认证",
-					"国家认证健身规划师",
-					"MMA综合格斗认证",
-					"FPT体适能认证",
+					"理疗契合养生导师",
+					"哈他瑜伽认证",
+					"流瑜伽认证",
+					"阴瑜伽认证",
+					"热瑜伽认证",
 				],
-				projects: ["塑形","增肌","减脂","拉伸","运动损伤预防处理","体态调整"]
+				projects: ["哈他瑜伽", "阴瑜伽", "流瑜伽", "理疗瑜伽", "高温瑜伽", "心灵疗愈", "阿斯汤加", "普拉提器械", "双语儿童"]
 			},
 		]
 };
