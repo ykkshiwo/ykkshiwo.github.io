@@ -15,7 +15,7 @@
 		<script src="./courses_info.js"></script>
 		<script>
 
-			//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
+		//		此为将所有课程的时间段转为分钟形式。如10点就是600分钟。
 		var course_interval = [ 525, 600, 840, 1140, 1155, 1160, 1170, 1200, 1215, 1230 ]
 		//		此函数返回课程进行到哪里，也就是返回第几个tr，以便将此tr的下边框变成红色。
 		function whereCourse() {
@@ -571,18 +571,18 @@
 	</head>
 
 	<body>
-		<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/201906/201906011000466765730.jpg); background-repeat: no-repeat; background-size:100% 100%">
+		<div style="width: 100%; height: 100%; background-color: #CF8D00; display: flex; flex-direction: column; justify-content: space-around; align-items: flex-start;padding: 1% 2%; box-sizing: border-box; background-image: url(http://yy.rxmmd.net/Storage/master/gallery/202006/202006141556494354150.jpg); background-repeat: no-repeat; background-size:100% 100%">
 
 			<!--		显示天气预报-->
 			<div style="width: 40%; height: 20%; border: 0px solid black;display: flex;flex-direction: column; justify-content: space-around; align-items: center; color:white">
-				<div id="specific_date" style="border: 0px red solid; font-size: 20px;">
+				<div id="specific_date" style="border: 0px red solid; font-size: 20px; color: #3b8684">
 
 				</div>
 				<div style="border: 0px blue solid; display: flex;flex-direction: row; justify-content: center; align-items: flex-start">
-					<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;">
+					<div id="tmp_today" style="font-size: 80px; font-family: SimHei; border: 0px solid red; height: 80px;color: #3b8684">
 						12/18</div>
-					<div style="font-weight: bold; padding: 0; border: 0px solid blue">o</div>
-					<div style="align-self: flex-end; border: 0px solid green; font-size: 25px;">c</div>
+					<div style="font-weight: bold; padding: 0; border: 0px solid blue; color: #3b8684">o</div>
+					<div style="align-self: flex-end; border: 0px solid green; font-size: 25px; color: #3b8684">c</div>
 				</div>
 				<div style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;border: 0px red solid; width: 100%; background-color: rgba(0, 0, 0, 0.39); ">
 					<div id="day0" class="weather_day">
@@ -605,7 +605,7 @@
 
 			<!--		时钟显示， 绝对定位在右上角-->
 
-			<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: white;text-shadow:0 0 0.2em yellow, -0 -0 0.2em yellow;">
+			<div id="timer" style="position: absolute; top: 25px; right: 25px; font-size: 80px;color: #3b8684">
 				12:12 </div>
 
 			<!--		课程表修订， 绝对定位在右上角-->

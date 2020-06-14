@@ -104,21 +104,6 @@ var data_person_trains =
 				projects: ["减脂", "塑形", "拉伸"]
 			},
 			{
-				en_name: " Arthar",
-				cn_name: "祁筠哲",
-				img: "http://yy.rxmmd.net/Storage/master/gallery/201908/201908240950214157822.jpg",
-				position: "佑远私人教练",
-				certificates: [
-					"健身教练国家职业资格证书",
-					"MFT泰拳一级认证",
-					"MFT Boxing Fit 拳击体适能",
-					"WEX 青少年格斗体适能",
-					"JF Boxing 中泰国际一级泰拳认证", 
-					"戴健新健美技术认证"
-				],
-				projects: ["减脂", "塑形", "拉伸"]
-			},
-			{
 				en_name: "Julia",
 				cn_name: "未央",
 				position: " 佑远普拉提主教",
