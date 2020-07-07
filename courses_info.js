@@ -11,7 +11,7 @@ var fjl = [
 		//{ 'cousrName': 'Gentle Flow 绽放·流', 'TrainName': 'Julia', 'Time': '840', 'duration': '50' },
 		// { 'cousrName': 'Dance 有氧舞蹈', 'TrainName': 'Anna', 'Time': '1140', 'duration': '50' },
 		// { 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '1160', 'duration': '50' },
-		{ 'cousrName': '小团课', 'TrainName': '猎豹', 'Time': '1170', 'duration': '40' },
+		// { 'cousrName': '小团课', 'TrainName': '猎豹', 'Time': '1170', 'duration': '40' },
 	],
 
 	[
