@@ -12,6 +12,7 @@ var fjl = [
 		// { 'cousrName': 'Dance 有氧舞蹈', 'TrainName': 'Anna', 'Time': '1140', 'duration': '50' },
 		// { 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '1160', 'duration': '50' },
 		// { 'cousrName': '小团课', 'TrainName': '猎豹', 'Time': '1170', 'duration': '40' },
+		{ 'cousrName': 'I Yoga 瑜伽', 'TrainName': 'Julia', 'Time': '1170', 'duration': '50' },
 	],
 
 	[
@@ -25,7 +26,8 @@ var fjl = [
 
 	[
 		// 周三
-		{ 'cousrName': '瑜伽YOGA', 'TrainName': 'Julia', 'Time': '1170', 'duration': '50' },
+		// { 'cousrName': '瑜伽YOGA', 'TrainName': 'Julia', 'Time': '1170', 'duration': '50' },
+		{ 'cousrName': 'Mat Pilates 垫上普拉提', 'TrainName': 'Julia', 'Time': '1170', 'duration': '50' },
 		// { 'cousrName': 'pump杠铃', 'TrainName': '蒋毅', 'Time': '1155', 'duration': '50' },
 		// { 'cousrName': '核心', 'TrainName': '蒋毅', 'Time': '1215', 'duration': '30' },
 	],
@@ -40,14 +42,15 @@ var fjl = [
 
 	[
 		// 周五
-		{ 'cousrName': 'I Yoga 瑜伽', 'TrainName': 'Julia', 'Time': '1170', 'duration': '60' },
+		{ 'cousrName': 'I Yoga 瑜伽', 'TrainName': 'Julia', 'Time': '1170', 'duration': '50' },
+		{ 'cousrName': 'Cycle 极速飞轮', 'TrainName': 'Stella', 'Time': '1170', 'duratio': '45' },
 		// { 'cousrName': '杠铃', 'TrainName': '蒋毅', 'Time': '1155', 'duration': '50' },
 		// { 'cousrName': '核心', 'TrainName': '蒋毅', 'Time': '1215', 'duration': '30' },
 	],
 
 	[
 		// 周六
-		//{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '1140', 'duration': '50' },
+		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '840', 'duration': '50' },
 		// { 'cousrName': 'Cycle 极速飞轮', 'TrainName': 'Stella', 'Time': '1170', 'duration': '50' },
 		//{ 'cousrName': '私教小团课', 'TrainName': '猎豹&老A', 'Time': '1170', 'duration': '45' },
 	]
