@@ -50,7 +50,7 @@ var fjl = [
 
 	[
 		// 周六
-		{ 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '840', 'duration': '50' },
+		// { 'cousrName': 'Dance Yoga 舞韵瑜伽', 'TrainName': 'Yur', 'Time': '840', 'duration': '50' },
 		// { 'cousrName': 'Cycle 极速飞轮', 'TrainName': 'Stella', 'Time': '1170', 'duration': '50' },
 		//{ 'cousrName': '私教小团课', 'TrainName': '猎豹&老A', 'Time': '1170', 'duration': '45' },
 	]
